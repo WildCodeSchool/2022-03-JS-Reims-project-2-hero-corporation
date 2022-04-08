@@ -1,34 +1,19 @@
-## Concept
+--- Second projet collaboratif dans le cadre de la formation Web de la Wild Code School - 5eme semaine de formation ---
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+Cahier des charges:
 
-## Setup & Use
+- Réaliser une application web dynamique avec React
+- Utilisation des données d'une API publique
+- L'application doit comporter une partie backend simple avec Express (facultatif)
+- Réalisation de wireframe
+- Mise en application des méthodes agiles (management)
+- Usage du framework AGILE "SCRUM" (gestion de projet)
+- Utilisation de Git et GitHub pour le travail collaboratif
+- Usage de Trello (gestion de projet)
+- Déployer le site sur GitHub ou Netlify (facultatif)
 
-### Project Initialization
+Objectif:
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- Run command `npm run setup`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+A la suite de la présentation de 4 API différentes, il nous a été confié la tâche de choisir l'une d'entre elles comme base pour dévelloper un concept d'application web autour de zéro. Après délibération, nous nous sommes orientés vers l'API SuperHero et nous avons choisi de concevoir un jeu sur navigateur jouable à la fois sur mobile et desktop inspiré du jeu de cartes "Marvel: 5 minutes".
 
-### Available Commands
-
-- `setup` : Initialization of frontend and backend, as well as all toolings
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
-- `fix` : Fixes linter errors (run it if `lint` growls on your code !)
-
-## FAQ
-
-### Tools
-
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-- _Nodemon_ : Allows to restart the server everytime a .js file is udated
+Le joueur pourra séléctionner parmis une liste de héros différents son personnage afin d'affronter de multiples boss jusqu'à arriver au Boss final. Ce dernier devra bien gérer ses ressources contre ses différents ennemis afin de ne pas arriver épuiser et perdre face au boss final.
