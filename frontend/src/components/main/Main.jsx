@@ -1,3 +1,4 @@
+import AllAPI from "./api/AllAPI";
 import Road from "./Road";
 
 function Main() {
@@ -5,6 +6,7 @@ function Main() {
     <>
       <p>Main</p>
       <Road />
+      <AllAPI />
     </>
   );
 }
