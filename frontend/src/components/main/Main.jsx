@@ -1,12 +1,10 @@
-import Fight from "./Fight";
-import SelectHero from "./SelectHero";
+import Road from "./Road";
 
 function Main() {
   return (
     <>
       <p>Main</p>
-      <Fight />
-      <SelectHero />
+      <Road />
     </>
   );
 }
