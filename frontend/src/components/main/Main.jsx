@@ -1,4 +1,4 @@
-import Road from "./Road";
+import Road from "../../pages/Road";
 
 function Main() {
   return (
