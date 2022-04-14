@@ -1,0 +1,80 @@
+body {
+  height: 100%;
+  background-image: url("https://alk3r.files.wordpress.com/2016/11/8e29c-1478556182462.gif?w=700&h=1089");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#intelligence::-moz-progress-bar {
+  background-color: blue;
+}
+#strength::-moz-progress-bar {
+  background-color: green;
+}
+#speed::-moz-progress-bar {
+  background-color: yellow;
+}
+#power::-moz-progress-bar {
+  background-color: red;
+}
+figure {
+  display: flex;
+  flex-direction: row-reverse;
+}
+figcaption {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: white;
+}
+p {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+li {
+  list-style-type: none;
+}
+.fightimg {
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logo1 {
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+.logohome {
+  max-width: 1000px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.Intelligence {
+  background-color: blue;
+}
+.Strength {
+  background-color: green;
+}
+.Speed {
+  background-color: yellow;
+}
+.Power {
+  background-color: red;
+}
