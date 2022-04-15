@@ -25,6 +25,11 @@ function SelectHero({ characters }) {
           </li>
         ))}
       </ul>
+      <img
+        src="./src/assets/Sans_titre_-_2.png"
+        alt="Start"
+        className="start"
+      />
       <ul>
         {characters.filter(heroesOnly).map((character) => (
           <li key={character.id}>
