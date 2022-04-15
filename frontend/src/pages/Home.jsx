@@ -1,5 +1,7 @@
 function Home() {
-  return <p>Home</p>;
+  return (
+    <img src="./src/assets/logo1.png" className="logohome" alt="logohome" />
+  );
 }
 
 export default Home;

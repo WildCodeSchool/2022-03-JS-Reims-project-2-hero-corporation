@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  height: 100%;
+  background-image: url("https://alk3r.files.wordpress.com/2016/11/8e29c-1478556182462.gif?w=700&h=1089");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+li {
+  list-style-type: none;
+}
+p {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.logo1 {
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+.fightimg {
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.logohome {
+  max-width: 1000px;
+  display: block;
+  margin: auto;
+}
