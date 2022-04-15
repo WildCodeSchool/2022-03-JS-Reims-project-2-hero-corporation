@@ -1,6 +1,10 @@
 function Home() {
   return (
-    <img src="./src/assets/logo1.png" className="logohome" alt="logohome" />
+    <img
+      src="./src/assets/logo1.png"
+      className="logohome"
+      alt=" Hero Corporation"
+    />
   );
 }
 

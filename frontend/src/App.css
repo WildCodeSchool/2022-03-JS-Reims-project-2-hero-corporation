@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  height: 100%;
+  height: 100vh;
   background-image: url("https://alk3r.files.wordpress.com/2016/11/8e29c-1478556182462.gif?w=700&h=1089");
   background-position: center;
   background-repeat: no-repeat;
