@@ -1,0 +1,25 @@
+#intelligence::-moz-progress-bar {
+  background-color: blue;
+}
+#strength::-moz-progress-bar {
+  background-color: green;
+}
+#speed::-moz-progress-bar {
+  background-color: yellow;
+}
+#power::-moz-progress-bar {
+  background-color: red;
+}
+figure {
+  display: flex;
+  flex-direction: row-reverse;
+}
+figcaption {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  color: white;
+}
+img {
+  padding: 1rem;
+}

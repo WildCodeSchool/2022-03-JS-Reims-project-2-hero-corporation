@@ -1,5 +1,11 @@
 function Home() {
-  return <p>Home</p>;
+  return (
+    <img
+      src="./src/assets/logo1.png"
+      className="logohome"
+      alt=" Hero Corporation"
+    />
+  );
 }
 
 export default Home;

@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import "./Character.css";
+
 function Character({ character }) {
   return (
     <figure>
