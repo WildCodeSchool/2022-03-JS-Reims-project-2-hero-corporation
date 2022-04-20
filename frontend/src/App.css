@@ -47,3 +47,17 @@ p {
   display: block;
   margin: auto;
 }
+
+.intelligence {
+  background-color: blue;
+  color: whitesmoke;
+}
+
+.intelligence:hover { 
+  border: 2px solid gold;
+}
+
+.intelligence:active {
+  box-shadow: inset -2px -2px 3px lightblue,
+              inset 2px 2px 3px black;
+}
