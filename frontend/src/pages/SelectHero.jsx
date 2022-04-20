@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import Character from "../components/Character";
+import CharacterType from "../components/CharacterType";
 
-function SelectHero({ characters }) {
+function SelectHero({ characters, setSelectedHero }) {
   const heroesOnly = (element) =>
     element.id === 346 ||
     element.id === 285 ||
@@ -28,7 +29,9 @@ function SelectHero({ characters }) {
       <ul>
         {characters.filter(heroesOnly).map((character) => (
           <li key={character.id}>
-            <Character character={character} />
+            <button type="button" onClick={() => setSelectedHero(character)}>
+              <Character character={character} />
+            </button>
           </li>
         ))}
       </ul>
@@ -37,7 +40,8 @@ function SelectHero({ characters }) {
 }
 
 SelectHero.propTypes = {
-  characters: PropTypes.arrayOf(Character.propTypes.character).isRequired,
+  characters: PropTypes.arrayOf(CharacterType).isRequired,
+  setSelectedHero: PropTypes.func.isRequired,
 };
 
 export default SelectHero;
