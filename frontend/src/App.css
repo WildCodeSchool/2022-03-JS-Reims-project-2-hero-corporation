@@ -63,7 +63,7 @@ p {
 }
 
 .strength {
-  background-color: red;
+  background-color: green;
   color: whitesmoke;
 }
 
@@ -72,6 +72,20 @@ p {
 }
 
 .strength:active {
-  box-shadow: inset -2px -2px 3px lightcoral,
+  box-shadow: inset -2px -2px 3px lightgreen,
+              inset 2px 2px 3px black;
+}
+
+.speed {
+  background-color: yellow;
+  color: whitesmoke;
+}
+
+.speed:hover { 
+  border: 2px solid gold;
+}
+
+.speed:active {
+  box-shadow: inset -2px -2px 3px lightyellow,
               inset 2px 2px 3px black;
 }

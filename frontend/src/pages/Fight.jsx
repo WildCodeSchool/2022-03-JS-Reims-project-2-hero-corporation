@@ -28,6 +28,9 @@ function Fight({ characters }) {
       <button className="strength" type="button">
         Strength
       </button>
+      <button className="speed" type="button">
+        Speed
+      </button>
     </>
   );
 }
