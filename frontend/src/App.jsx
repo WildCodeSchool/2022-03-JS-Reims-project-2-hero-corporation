@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Main selectedHero={selectedHero} setSelectedHero={setSelectedHero} />
       <Footer />
     </div>
   );
