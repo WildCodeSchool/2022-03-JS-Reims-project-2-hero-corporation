@@ -49,7 +49,7 @@ p {
 }
 
 .intelligence {
-  background-color: blue;
+  background-color: purple;
   color: whitesmoke;
 }
 
@@ -58,7 +58,7 @@ p {
 }
 
 .intelligence:active {
-  box-shadow: inset -2px -2px 3px lightblue,
+  box-shadow: inset -2px -2px 3px lightpink,
               inset 2px 2px 3px black;
 }
 
@@ -77,7 +77,7 @@ p {
 }
 
 .speed {
-  background-color: yellow;
+  background-color: blue;
   color: whitesmoke;
 }
 
@@ -86,6 +86,27 @@ p {
 }
 
 .speed:active {
-  box-shadow: inset -2px -2px 3px lightyellow,
+  box-shadow: inset -2px -2px 3px lightblue,
               inset 2px 2px 3px black;
+}
+
+.power {
+  background-color: orangered;
+  color: whitesmoke;
+}
+
+.power:hover { 
+  border: 2px solid gold;
+}
+
+.power:active {
+  box-shadow: inset -2px -2px 3px lightsalmon,
+              inset 2px 2px 3px black;
+}
+
+.button {
+  display: grid;
+  grid: repeat(2, 60px) / auto-flow 80px;
+  gap: 0.5rem;
+  justify-content: center;
 }
