@@ -5,7 +5,7 @@ import Footer from "./components/footer/Footer";
 import "./App.css";
 
 function App() {
-  const [selectedHero, setSelectedHero] = useState(null);
+  const [selectedHero, setSelectedHero] = useState();
   return (
     <div className="App">
       <Header />

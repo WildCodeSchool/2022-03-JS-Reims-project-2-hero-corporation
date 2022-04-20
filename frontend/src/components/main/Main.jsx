@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
+import CharacterType from "../CharacterType";
 import Road from "../../pages/Road";
-import Character from "../Character";
 
 function Main(props) {
   const { selectedHero, setSelectedHero } = props;
@@ -11,10 +11,13 @@ function Main(props) {
     </>
   );
 }
-
 Main.propTypes = {
-  selectedHero: Character.propTypes.character.isRequired,
+  selectedHero: CharacterType,
   setSelectedHero: PropTypes.func.isRequired,
+};
+
+Main.defaultProps = {
+  selectedHero: undefined,
 };
 
 export default Main;

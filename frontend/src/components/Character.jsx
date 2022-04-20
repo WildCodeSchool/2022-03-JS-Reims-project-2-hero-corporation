@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
-
 import "./Character.css";
+import CharacterType from "./CharacterType";
 
 function Character({ character }) {
   return (
@@ -40,18 +39,7 @@ function Character({ character }) {
 }
 
 Character.propTypes = {
-  character: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    images: PropTypes.shape({
-      sm: PropTypes.string.isRequired,
-    }).isRequired,
-    powerstats: PropTypes.shape({
-      intelligence: PropTypes.number.isRequired,
-      strength: PropTypes.number.isRequired,
-      speed: PropTypes.number.isRequired,
-      power: PropTypes.number.isRequired,
-    }).isRequired,
-  }).isRequired,
+  character: CharacterType.isRequired,
 };
 
 export default Character;
