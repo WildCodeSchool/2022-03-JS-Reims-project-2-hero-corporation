@@ -61,3 +61,17 @@ p {
   box-shadow: inset -2px -2px 3px lightblue,
               inset 2px 2px 3px black;
 }
+
+.strength {
+  background-color: red;
+  color: whitesmoke;
+}
+
+.strength:hover { 
+  border: 2px solid gold;
+}
+
+.strength:active {
+  box-shadow: inset -2px -2px 3px lightcoral,
+              inset 2px 2px 3px black;
+}

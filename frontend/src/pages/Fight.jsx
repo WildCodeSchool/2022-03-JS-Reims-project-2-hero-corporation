@@ -25,6 +25,9 @@ function Fight({ characters }) {
       <button className="intelligence" type="button">
         Intelligence
       </button>
+      <button className="strength" type="button">
+        Strength
+      </button>
     </>
   );
 }
