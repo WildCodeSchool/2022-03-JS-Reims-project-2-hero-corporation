@@ -1,14 +1,14 @@
 #intelligence::-moz-progress-bar {
-  background-color: blue;
+  background-color: purple;
 }
 #strength::-moz-progress-bar {
   background-color: green;
 }
 #speed::-moz-progress-bar {
-  background-color: yellow;
+  background-color: blue;
 }
 #power::-moz-progress-bar {
-  background-color: red;
+  background-color: orangered;
 }
 figure {
   display: flex;

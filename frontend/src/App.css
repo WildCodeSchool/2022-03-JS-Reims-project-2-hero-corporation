@@ -47,3 +47,66 @@ p {
   display: block;
   margin: auto;
 }
+
+.intelligence {
+  background-color: purple;
+  color: whitesmoke;
+}
+
+.intelligence:hover { 
+  border: 2px solid gold;
+}
+
+.intelligence:active {
+  box-shadow: inset -2px -2px 3px lightpink,
+              inset 2px 2px 3px black;
+}
+
+.strength {
+  background-color: green;
+  color: whitesmoke;
+}
+
+.strength:hover { 
+  border: 2px solid gold;
+}
+
+.strength:active {
+  box-shadow: inset -2px -2px 3px lightgreen,
+              inset 2px 2px 3px black;
+}
+
+.speed {
+  background-color: blue;
+  color: whitesmoke;
+}
+
+.speed:hover { 
+  border: 2px solid gold;
+}
+
+.speed:active {
+  box-shadow: inset -2px -2px 3px lightblue,
+              inset 2px 2px 3px black;
+}
+
+.power {
+  background-color: orangered;
+  color: whitesmoke;
+}
+
+.power:hover { 
+  border: 2px solid gold;
+}
+
+.power:active {
+  box-shadow: inset -2px -2px 3px lightsalmon,
+              inset 2px 2px 3px black;
+}
+
+.buttons {
+  display: grid;
+  grid: repeat(2, 60px) / auto-flow 80px;
+  gap: 0.5rem;
+  justify-content: center;
+}

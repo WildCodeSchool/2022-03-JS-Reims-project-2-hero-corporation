@@ -22,6 +22,20 @@ function Fight({ characters }) {
           </li>
         ))}
       </ul>
+      <div className="buttons">
+        <button className="intelligence" type="button">
+          Intelligence
+        </button>
+        <button className="strength" type="button">
+          Strength
+        </button>
+        <button className="speed" type="button">
+          Speed
+        </button>
+        <button className="power" type="button">
+          Power
+        </button>
+      </div>
     </>
   );
 }
