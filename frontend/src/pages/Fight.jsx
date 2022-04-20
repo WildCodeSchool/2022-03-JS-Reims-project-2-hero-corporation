@@ -22,7 +22,7 @@ function Fight({ characters }) {
           </li>
         ))}
       </ul>
-      <div className="button">
+      <div className="buttons">
         <button className="intelligence" type="button">
           Intelligence
         </button>

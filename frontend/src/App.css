@@ -104,7 +104,7 @@ p {
               inset 2px 2px 3px black;
 }
 
-.button {
+.buttons {
   display: grid;
   grid: repeat(2, 60px) / auto-flow 80px;
   gap: 0.5rem;
