@@ -105,5 +105,6 @@ figcaption h1 {
   gap: 0.5rem;
   justify-content: center;
 }
-.HC-Logo {
+.hclogo {
   max-width: 15vh;
+}

@@ -26,7 +26,7 @@ function SelectHero({ characters, setSelectedHero }) {
           src="/src/assets/images/start.png"
           alt="start button"
           className="start"
-        ></img>
+        />
       </div>
       <ul>
         {characters.filter(heroesOnly).map((character) => (
