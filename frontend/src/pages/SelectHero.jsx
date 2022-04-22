@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Character from "../components/Character";
 import CharacterType from "../components/CharacterType";
+import "../components/SelectHero.css";
 
 function SelectHero({ characters, setSelectedHero }) {
   const heroesOnly = (element) =>
