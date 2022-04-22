@@ -7,11 +7,9 @@
   font-family: ComicNeue-Angular-Regular;
   src: url(/src/assets/font/ComicNeue-Angular-Regular.ttf);
 }
-* {
-  overflow: scroll;
-}
+
 body {
-  height: 100vh;
+  overflow: scroll;
   background-image: url("/src/assets/images/istockphoto-515005882-612x612.jpg");
   background-position: center;
   background-repeat: no-repeat;
