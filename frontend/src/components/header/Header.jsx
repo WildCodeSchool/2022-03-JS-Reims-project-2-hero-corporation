@@ -3,7 +3,11 @@ import NavBar from "./NavBar";
 function Header() {
   return (
     <header>
-      <p>Header</p>
+      <img
+        src="/src/assets/images/HC-logo.png"
+        alt="Hero Corporation Logo "
+        className="HC-Logo"
+      ></img>
       <NavBar />
     </header>
   );

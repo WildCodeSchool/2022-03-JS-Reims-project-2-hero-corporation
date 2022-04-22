@@ -14,7 +14,11 @@ function Fight({ characters }) {
           </li>
         ))}
       </ul>
-      <img src="./src/assets/fight8.png" className="fightimg" alt="fight" />
+      <img
+        src="./src/assets/images/fight.png"
+        className="fightimg"
+        alt="fight"
+      />
       <ul>
         {characters.filter(heroesOnly).map((character) => (
           <li key={character.id}>
