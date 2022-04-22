@@ -21,10 +21,10 @@ function SelectHero({ characters, setSelectedHero }) {
           </li>
         ))}
       </ul>
-      <div className="startbutton">
+      <div className="start">
         <img
           src="/src/assets/images/start.png"
-          alt="start button"
+          alt="start img"
           className="start"
         />
       </div>
