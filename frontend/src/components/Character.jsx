@@ -6,7 +6,7 @@ function Character({ character }) {
     <figure>
       <img src={character.images.sm} alt={character.name} />
       <figcaption>
-        {character.name}
+        <h3>{character.name}</h3>
         <p>
           Intelligence :
           <progress

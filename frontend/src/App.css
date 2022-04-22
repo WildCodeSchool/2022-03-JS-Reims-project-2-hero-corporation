@@ -1,18 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: Bangers-Regular;
+  src: url(/src/assets/font/Bangers-Regular.ttf);
+  font-family: ComicNeue-Angular-Regular;
+  src: url(/src/assets/font/ComicNeue-Angular-Regular.ttf);
+}
 
 body {
-  height: 100vh;
-  background-image: url("https://alk3r.files.wordpress.com/2016/11/8e29c-1478556182462.gif?w=700&h=1089");
+  overflow: scroll;
+  background-image: url("/src/assets/images/istockphoto-515005882-612x612.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
   color: white;
 }
 ul {
@@ -25,11 +26,15 @@ li {
   list-style-type: none;
 }
 p {
+  font-family: "ComicNeue-Angular-Regular";
   color: white;
   display: flex;
   flex-direction: column;
 }
-.logo1 {
+figcaption h1 {
+  font-family: "Bangers-Regular";
+}
+.start {
   max-width: 400px;
   display: block;
   margin-left: auto;
@@ -42,24 +47,18 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-.logohome {
-  max-width: 1000px;
-  display: block;
-  margin: auto;
-}
 
 .intelligence {
   background-color: purple;
   color: whitesmoke;
 }
 
-.intelligence:hover { 
+.intelligence:hover {
   border: 2px solid gold;
 }
 
 .intelligence:active {
-  box-shadow: inset -2px -2px 3px lightpink,
-              inset 2px 2px 3px black;
+  box-shadow: inset -2px -2px 3px lightpink, inset 2px 2px 3px black;
 }
 
 .strength {
@@ -67,13 +66,12 @@ p {
   color: whitesmoke;
 }
 
-.strength:hover { 
+.strength:hover {
   border: 2px solid gold;
 }
 
 .strength:active {
-  box-shadow: inset -2px -2px 3px lightgreen,
-              inset 2px 2px 3px black;
+  box-shadow: inset -2px -2px 3px lightgreen, inset 2px 2px 3px black;
 }
 
 .speed {
@@ -81,13 +79,12 @@ p {
   color: whitesmoke;
 }
 
-.speed:hover { 
+.speed:hover {
   border: 2px solid gold;
 }
 
 .speed:active {
-  box-shadow: inset -2px -2px 3px lightblue,
-              inset 2px 2px 3px black;
+  box-shadow: inset -2px -2px 3px lightblue, inset 2px 2px 3px black;
 }
 
 .power {
@@ -95,13 +92,12 @@ p {
   color: whitesmoke;
 }
 
-.power:hover { 
+.power:hover {
   border: 2px solid gold;
 }
 
 .power:active {
-  box-shadow: inset -2px -2px 3px lightsalmon,
-              inset 2px 2px 3px black;
+  box-shadow: inset -2px -2px 3px lightsalmon, inset 2px 2px 3px black;
 }
 
 .buttons {
@@ -109,4 +105,7 @@ p {
   grid: repeat(2, 60px) / auto-flow 80px;
   gap: 0.5rem;
   justify-content: center;
+}
+.hclogo {
+  max-width: 15vh;
 }

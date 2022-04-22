@@ -15,11 +15,6 @@ function SelectHero({ characters, setSelectedHero }) {
 
   return (
     <>
-      <img
-        src="./src/assets/logo1.png"
-        className="logo1"
-        alt="Hero Corporation"
-      />
       <ul>
         {characters.filter(boss).map((character) => (
           <li key={character.id}>
@@ -27,6 +22,13 @@ function SelectHero({ characters, setSelectedHero }) {
           </li>
         ))}
       </ul>
+      <div className="start">
+        <img
+          src="/src/assets/images/start.png"
+          alt="start img"
+          className="start"
+        />
+      </div>
       <ul>
         {characters.filter(heroesOnly).map((character) => (
           <li key={character.id}>
