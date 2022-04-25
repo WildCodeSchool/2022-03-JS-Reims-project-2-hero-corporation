@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import Character from "../components/Character";
 
 function Fight({ characters }) {
