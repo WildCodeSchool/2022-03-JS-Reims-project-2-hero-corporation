@@ -5,7 +5,6 @@ function NavBar() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/selecthero">Select Hero</Link>
-      <Link to="/fight">Fight</Link>
     </nav>
   );
 }
