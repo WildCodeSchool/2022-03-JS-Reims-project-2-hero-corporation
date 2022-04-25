@@ -50,36 +50,40 @@ function Fight({ boss, hero }) {
 
   return (
     <>
-      <ul>
-        {characters.filter(boss).map((character) => (
-          <li key={character.id}>
-            <Character character={character} />
-          </li>
-        ))}
-      </ul>
+      <Character character={boss} />
       <img
         src="./src/assets/images/fight.png"
         className="fightimg"
         alt="fight"
       />
-      <ul>
-        {characters.filter(heroesOnly).map((character) => (
-          <li key={character.id}>
-            <Character character={character} />
-          </li>
-        ))}
-      </ul>
+      <Character character={hero} />
       <div className="buttons">
-        <button className="intelligence" type="button">
+        <button
+          onClick={() => useWeapon("intelligence")}
+          className="intelligence"
+          type="button"
+        >
           Intelligence
         </button>
-        <button className="strength" type="button">
+        <button
+          onClick={() => useWeapon("strength")}
+          className="strength"
+          type="button"
+        >
           Strength
         </button>
-        <button className="speed" type="button">
+        <button
+          onClick={() => useWeapon("speed")}
+          className="speed"
+          type="button"
+        >
           Speed
         </button>
-        <button className="power" type="button">
+        <button
+          onClick={() => useWeapon("power")}
+          className="power"
+          type="button"
+        >
           Power
         </button>
       </div>
@@ -88,7 +92,8 @@ function Fight({ boss, hero }) {
 }
 
 Fight.propTypes = {
-  characters: PropTypes.arrayOf(Character.propTypes.character).isRequired,
+  boss: Character.propTypes.character.isRequired,
+  hero: Character.propTypes.character.isRequired,
 };
 
 export default Fight;
