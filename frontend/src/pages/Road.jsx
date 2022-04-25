@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import axios from "axios";
@@ -6,11 +5,12 @@ import axios from "axios";
 import Home from "./Home";
 import SelectHero from "./SelectHero";
 import Fight from "./Fight";
-import CharacterType from "../components/CharacterType";
 
-function Road(props) {
+function Road() {
   const [characters, setCharacters] = useState([]);
-  const { selectedHero, setSelectedHero } = props;
+  const [selectedHero, setSelectedHero] = useState();
+
+  const boss = (element) => element.id === 655;
 
   useEffect(() => {
     axios
@@ -36,24 +36,11 @@ function Road(props) {
       <Route
         path="/fight"
         element={
-          <Fight
-            characters={characters}
-            selectedHero={selectedHero}
-            setSelectedHero={setSelectedHero}
-          />
+          <Fight boss={characters.filter(boss)[0]} hero={selectedHero} />
         }
       />
     </Routes>
   );
 }
-
-Road.propTypes = {
-  selectedHero: CharacterType,
-  setSelectedHero: PropTypes.func.isRequired,
-};
-
-Road.defaultProps = {
-  selectedHero: undefined,
-};
 
 export default Road;
