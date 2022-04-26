@@ -16,13 +16,15 @@ function SelectHero({ characters, setSelectedHero }) {
 
   return (
     <>
-      <ul>
-        {characters.filter(boss).map((character) => (
-          <li key={character.id}>
-            <Character character={character} />
-          </li>
-        ))}
-      </ul>
+      <div className="bossSelect">
+        <ul>
+          {characters.filter(boss).map((character) => (
+            <li key={character.id}>
+              <Character character={character} />
+            </li>
+          ))}
+        </ul>
+      </div>
       <Link to="/fight">
         <img
           src="/src/assets/images/start.png"
@@ -30,15 +32,17 @@ function SelectHero({ characters, setSelectedHero }) {
           className="start"
         />
       </Link>
-      <ul>
-        {characters.filter(heroesOnly).map((character) => (
-          <li key={character.id}>
-            <button type="button" onClick={() => setSelectedHero(character)}>
-              <Character character={character} />
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="heroSelect">
+        <ul>
+          {characters.filter(heroesOnly).map((character) => (
+            <li key={character.id}>
+              <button type="button" onClick={() => setSelectedHero(character)}>
+                <Character character={character} />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
