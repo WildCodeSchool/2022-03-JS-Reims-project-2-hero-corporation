@@ -28,13 +28,19 @@ function SelectHero({ characters, setSelectedHero }) {
       <div className="heroSelect">
         <button
           type="button"
-          onClick={() => setSelectedIndex((selectedIndex - 1) % heroIds.length)}
+          className="previoushero"
+          onClick={() =>
+            setSelectedIndex(
+              (selectedIndex - 1 + heroIds.length) % heroIds.length
+            )
+          }
         >
           previous
         </button>
         {hero && <Character character={hero} />}
         <button
           type="button"
+          className="nexthero"
           onClick={() => setSelectedIndex((selectedIndex + 1) % heroIds.length)}
         >
           next
