@@ -26,15 +26,19 @@ function SelectHero({ characters, setSelectedHero }) {
         />
       </Link>
       <div className="heroSelect">
-        <ul>
-          {characters.filter(heroesOnly).map((character) => (
-            <li key={character.id}>
-              <button type="button" onClick={() => setSelectedHero(character)}>
-                <Character character={character} />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <button
+          type="button"
+          onClick={() => setSelectedIndex((selectedIndex - 1) % heroIds.length)}
+        >
+          previous
+        </button>
+        {hero && <Character character={hero} />}
+        <button
+          type="button"
+          onClick={() => setSelectedIndex((selectedIndex + 1) % heroIds.length)}
+        >
+          next
+        </button>
       </div>
     </>
   );
