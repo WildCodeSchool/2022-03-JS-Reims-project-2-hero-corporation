@@ -1,38 +1,40 @@
 import { useEffect, useState } from "react";
+import propTypes from "prop-types";
 import Character from "../components/Character";
 
-function Fight({ boss, hero }) {
-  const [bossLife, setBossLife] = useState(0);
+function Fight({ hero, bossesList }) {
+  const [bossLife, setBossLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
+  const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
 
   useEffect(() => {
     setBossLife(
-      boss.powerstats.intelligence +
-        boss.powerstats.strength +
-        boss.powerstats.speed +
-        boss.powerstats.power
+      currentBoss.powerstats.intelligence +
+        currentBoss.powerstats.strength +
+        currentBoss.powerstats.speed +
+        currentBoss.powerstats.power
     );
 
     const weaknessValue = Math.min(
-      boss.powerstats.intelligence,
-      boss.powerstats.strength,
-      boss.powerstats.speed,
-      boss.powerstats.power
+      currentBoss.powerstats.intelligence,
+      currentBoss.powerstats.strength,
+      currentBoss.powerstats.speed,
+      currentBoss.powerstats.power
     );
 
-    if (weaknessValue === boss.powerstats.intelligence) {
+    if (weaknessValue === currentBoss.powerstats.intelligence) {
       setBossWeakness("intelligence");
     }
-    if (weaknessValue === boss.powerstats.strength) {
+    if (weaknessValue === currentBoss.powerstats.strength) {
       setBossWeakness("strength");
     }
-    if (weaknessValue === boss.powerstats.speed) {
+    if (weaknessValue === currentBoss.powerstats.speed) {
       setBossWeakness("speed");
     }
-    if (weaknessValue === boss.powerstats.power) {
+    if (weaknessValue === currentBoss.powerstats.power) {
       setBossWeakness("power");
     }
-  }, [boss]);
+  }, [currentBoss]);
 
   const useWeapon = (weapon) => {
     if (weapon === bossWeakness) {
@@ -44,13 +46,18 @@ function Fight({ boss, hero }) {
 
   useEffect(() => {
     if (bossLife === 0) {
-      console.warn("Hello");
+      console.warn("The boss is dead");
+      if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
+        setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
+      } else {
+        console.warn("You win!");
+      }
     }
   }, [bossLife]);
 
   return (
     <>
-      <Character character={boss} />
+      <Character character={currentBoss} />
       <img
         src="./src/assets/images/fight.png"
         className="fightimg"
@@ -92,8 +99,8 @@ function Fight({ boss, hero }) {
 }
 
 Fight.propTypes = {
-  boss: Character.propTypes.character.isRequired,
   hero: Character.propTypes.character.isRequired,
+  bossesList: propTypes.arrayOf(Character.propTypes.character).isRequired,
 };
 
 export default Fight;
