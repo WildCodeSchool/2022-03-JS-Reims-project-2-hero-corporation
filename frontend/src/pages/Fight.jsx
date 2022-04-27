@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Character from "../components/Character";
+import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ boss, hero }) {
   const [bossLife, setBossLife] = useState(0);
@@ -36,14 +38,15 @@ function Fight({ boss, hero }) {
 
   const useWeapon = (weapon) => {
     let damage = 1;
+    if (heroStats[weapon] > 0) {
+      if (weapon === bossWeakness) {
+        damage = 10;
+      }
 
-    if (weapon === bossWeakness) {
-      damage = 10;
-    }
-
-    setBossLife(Math.max(bossLife - damage, 0));
-    const newStat = Math.max(heroStats[weapon] - 1, 0);
-    setHeroStats({ ...heroStats, [weapon]: newStat });
+      setBossLife(Math.max(bossLife - damage, 0));
+      const newStat = Math.max(heroStats[weapon] - 1, 0);
+      setHeroStats({ ...heroStats, [weapon]: newStat });
+    } else toast(`Not enouth ${[weapon]}`);
   };
 
   useEffect(() => {
@@ -68,6 +71,7 @@ function Fight({ boss, hero }) {
         alt="fight"
       />
       <Character character={hero} />
+      <ToastContainer />
       <div className="buttons">
         <button
           onClick={() => {
