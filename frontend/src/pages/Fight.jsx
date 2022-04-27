@@ -53,7 +53,6 @@ function Fight({ hero, bossesList }) {
 
   useEffect(() => {
     if (bossLife === 0) {
-      console.warn("The boss is dead");
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
       } else {
