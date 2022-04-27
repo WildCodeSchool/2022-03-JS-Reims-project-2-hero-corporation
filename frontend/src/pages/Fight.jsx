@@ -7,6 +7,9 @@ function Fight({ boss, hero }) {
   const [heroIntelligence, setHeroIntelligence] = useState(
     hero.powerstats.intelligence
   );
+  const [heroSpeed, setHeroSpeed] = useState(hero.powerstats.speed);
+  const [heroPower, setHeroPower] = useState(hero.powerstats.power);
+  const [heroStrength, setHeroStrength] = useState(hero.powerstats.strength);
 
   useEffect(() => {
     setBossLife(
@@ -47,6 +50,15 @@ function Fight({ boss, hero }) {
   const decrementStatIntelligence = () => {
     setHeroIntelligence(Math.max(heroIntelligence - 1, 0));
   };
+  const decrementStatSpeed = () => {
+    setHeroSpeed(Math.max(heroSpeed - 1, 0));
+  };
+  const decrementStatPower = () => {
+    setHeroPower(Math.max(heroPower - 1, 0));
+  };
+  const decrementStatStrength = () => {
+    setHeroStrength(Math.max(heroStrength - 1, 0));
+  };
   useEffect(() => {
     if (bossLife === 0) {
       console.warn("Hello");
@@ -75,25 +87,37 @@ function Fight({ boss, hero }) {
           <h2>{heroIntelligence}</h2>
         </button>
         <button
-          onClick={() => useWeapon("strength")}
+          onClick={() => {
+            useWeapon("strength");
+            decrementStatStrength();
+          }}
           className="strength"
           type="button"
         >
           <h2>{hero.powerstats.strength}</h2>
+          <h2>{heroStrength}</h2>
         </button>
         <button
-          onClick={() => useWeapon("speed")}
+          onClick={() => {
+            useWeapon("speed");
+            decrementStatSpeed();
+          }}
           className="speed"
           type="button"
         >
           <h2>{hero.powerstats.speed}</h2>
+          <h2>{heroSpeed}</h2>
         </button>
         <button
-          onClick={() => useWeapon("power")}
+          onClick={() => {
+            useWeapon("power");
+            decrementStatPower();
+          }}
           className="power"
           type="button"
         >
           <h2>{hero.powerstats.power}</h2>
+          <h2>{heroPower}</h2>
         </button>
       </div>
     </>
