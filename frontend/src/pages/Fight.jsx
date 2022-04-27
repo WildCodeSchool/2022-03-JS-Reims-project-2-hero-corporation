@@ -4,12 +4,7 @@ import Character from "../components/Character";
 function Fight({ boss, hero }) {
   const [bossLife, setBossLife] = useState(0);
   const [bossWeakness, setBossWeakness] = useState();
-  const [heroIntelligence, setHeroIntelligence] = useState(
-    hero.powerstats.intelligence
-  );
-  const [heroSpeed, setHeroSpeed] = useState(hero.powerstats.speed);
-  const [heroPower, setHeroPower] = useState(hero.powerstats.power);
-  const [heroStrength, setHeroStrength] = useState(hero.powerstats.strength);
+  const [heroStats, setHeroStats] = useState(hero.powerstats);
 
   useEffect(() => {
     setBossLife(
@@ -41,24 +36,17 @@ function Fight({ boss, hero }) {
   }, [boss]);
 
   const useWeapon = (weapon) => {
+    let damage = 1;
+
     if (weapon === bossWeakness) {
-      setBossLife(Math.max(bossLife - 10, 0));
-    } else {
-      setBossLife(Math.max(bossLife - 1, 0));
+      damage = 10;
     }
+
+    setBossLife(Math.max(bossLife - damage, 0));
+    const newStat = Math.max(heroStats[weapon] - 1, 0);
+    setHeroStats({ ...heroStats, [weapon]: newStat });
   };
-  const decrementStatIntelligence = () => {
-    setHeroIntelligence(Math.max(heroIntelligence - 1, 0));
-  };
-  const decrementStatSpeed = () => {
-    setHeroSpeed(Math.max(heroSpeed - 1, 0));
-  };
-  const decrementStatPower = () => {
-    setHeroPower(Math.max(heroPower - 1, 0));
-  };
-  const decrementStatStrength = () => {
-    setHeroStrength(Math.max(heroStrength - 1, 0));
-  };
+
   useEffect(() => {
     if (bossLife === 0) {
       console.warn("Hello");
@@ -78,52 +66,47 @@ function Fight({ boss, hero }) {
         <button
           onClick={() => {
             useWeapon("intelligence");
-            decrementStatIntelligence();
           }}
           className="intelligence"
           type="button"
         >
           <h2>{hero.powerstats.intelligence}</h2>
-          <h2>{heroIntelligence}</h2>
+          <h2>{heroStats.intelligence}</h2>
         </button>
         <button
           onClick={() => {
             useWeapon("strength");
-            decrementStatStrength();
           }}
           className="strength"
           type="button"
         >
           <h2>{hero.powerstats.strength}</h2>
-          <h2>{heroStrength}</h2>
+          <h2>{heroStats.strength}</h2>
         </button>
         <button
           onClick={() => {
             useWeapon("speed");
-            decrementStatSpeed();
           }}
           className="speed"
           type="button"
         >
           <h2>{hero.powerstats.speed}</h2>
-          <h2>{heroSpeed}</h2>
+          <h2>{heroStats.speed}</h2>
         </button>
         <button
           onClick={() => {
             useWeapon("power");
-            decrementStatPower();
           }}
           className="power"
           type="button"
         >
           <h2>{hero.powerstats.power}</h2>
-          <h2>{heroPower}</h2>
+          <h2>{heroStats.power}</h2>
         </button>
       </div>
     </>
   );
 }
-
 Fight.propTypes = {
   boss: Character.propTypes.character.isRequired,
   hero: Character.propTypes.character.isRequired,
