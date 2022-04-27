@@ -1,16 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
-  font-family: Bangers-Regular;
+  font-family: "Bangers";
   src: url(/src/assets/font/Bangers-Regular.ttf);
-  font-family: ComicNeue-Angular-Regular;
-  src: url(/src/assets/font/ComicNeue-Angular-Regular.ttf);
+  font-family: "Antic";
+  src: url(/src/assets/font/Antic-Regular.ttf);
 }
 
 body {
   overflow: scroll;
-  background-image: url("/src/assets/images/istockphoto-515005882-612x612.jpg");
+  background-image: url("/src/assets/images/backgroud-city-rays.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
