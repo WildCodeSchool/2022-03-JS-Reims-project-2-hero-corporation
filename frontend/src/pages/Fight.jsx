@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import propTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import Character from "../components/Character";
 
 function Fight({ hero, bossesList }) {
+  const navigate = useNavigate();
   const [bossLife, setBossLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
@@ -50,7 +52,7 @@ function Fight({ hero, bossesList }) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
       } else {
-        console.warn("You win!");
+        navigate("/endgame");
       }
     }
   }, [bossLife]);
