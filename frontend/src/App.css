@@ -60,9 +60,18 @@ figcaption h1 {
   margin-left: auto;
   margin-right: auto;
 }
+/* Début boutons d'attaque */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row: 2;
+  gap: 0.5rem;
+  justify-content: center;
+}
 
 .intelligence {
-  background-color: purple;
+  background-color: black;
+
   color: whitesmoke;
 }
 
@@ -112,13 +121,8 @@ figcaption h1 {
 .power:active {
   box-shadow: inset -2px -2px 3px lightsalmon, inset 2px 2px 3px black;
 }
+/* Fin boutons d'attaque */
 
-.buttons {
-  display: grid;
-  grid: repeat(2, 60px) / auto-flow 80px;
-  gap: 0.5rem;
-  justify-content: center;
-}
 .hclogo {
   max-width: 15vh;
 }
