@@ -70,8 +70,8 @@ function Fight({ boss, hero }) {
           className="intelligence"
           type="button"
         >
-          <h2>{hero.powerstats.intelligence}</h2>
           <h2>{heroStats.intelligence}</h2>
+          <h2>{hero.powerstats.intelligence}</h2>
         </button>
         <button
           onClick={() => {
@@ -80,8 +80,8 @@ function Fight({ boss, hero }) {
           className="strength"
           type="button"
         >
-          <h2>{hero.powerstats.strength}</h2>
           <h2>{heroStats.strength}</h2>
+          <h2>{hero.powerstats.strength}</h2>
         </button>
         <button
           onClick={() => {
@@ -90,8 +90,8 @@ function Fight({ boss, hero }) {
           className="speed"
           type="button"
         >
-          <h2>{hero.powerstats.speed}</h2>
           <h2>{heroStats.speed}</h2>
+          <h2>{hero.powerstats.speed}</h2>
         </button>
         <button
           onClick={() => {
@@ -100,8 +100,8 @@ function Fight({ boss, hero }) {
           className="power"
           type="button"
         >
-          <h2>{hero.powerstats.power}</h2>
           <h2>{heroStats.power}</h2>
+          <h2>{hero.powerstats.power}</h2>
         </button>
       </div>
     </>
