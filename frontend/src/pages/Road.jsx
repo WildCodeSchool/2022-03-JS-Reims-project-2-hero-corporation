@@ -35,9 +35,7 @@ function Road() {
       />
       <Route
         path="/fight"
-        element={
-          <Fight boss={characters.filter(boss)[0]} hero={selectedHero} />
-        }
+        element={<Fight boss={characters.find(boss)} hero={selectedHero} />}
       />
     </Routes>
   );
