@@ -6,13 +6,13 @@ import Home from "./Home";
 import SelectHero from "./SelectHero";
 import Fight from "./Fight";
 import Endgame from "./Endgame";
+import bossesID from "../components/BossesID";
 
 function Road() {
   const [characters, setCharacters] = useState([]);
   const [selectedHero, setSelectedHero] = useState();
   const [bossesList, setBossesList] = useState();
 
-  const bossesID = [639, 320, 141, 532, 655]; // Stromtrooper, Heat-Wave, Bullseye, Pyro, Thanos
   const boss = (element) => element.id === 655;
 
   useEffect(() => {
