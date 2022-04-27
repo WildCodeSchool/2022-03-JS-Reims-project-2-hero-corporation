@@ -9,14 +9,13 @@ function Fight({ hero, bossesList }) {
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
-
+  const maxBossLife =
+    currentBoss.powerstats.intelligence +
+    currentBoss.powerstats.strength +
+    currentBoss.powerstats.speed +
+    currentBoss.powerstats.power;
   useEffect(() => {
-    setBossLife(
-      currentBoss.powerstats.intelligence +
-        currentBoss.powerstats.strength +
-        currentBoss.powerstats.speed +
-        currentBoss.powerstats.power
-    );
+    setBossLife(maxBossLife);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -63,6 +62,13 @@ function Fight({ hero, bossesList }) {
 
   return (
     <>
+      <h2>
+        Boss Life {bossLife}/{maxBossLife}
+      </h2>
+      <progress id="bosslife" max={maxBossLife} value={bossLife}>
+        bossLife
+      </progress>
+
       <Character character={currentBoss} />
       <img
         src="./src/assets/images/fight.png"
