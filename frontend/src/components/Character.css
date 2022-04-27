@@ -1,14 +1,39 @@
 #intelligence::-moz-progress-bar {
   background-color: purple;
 }
+
+#intelligence::-webkit-progress-value {
+  background-color: purple;
+}
+#intelligence {
+  color: purple;
+}
 #strength::-moz-progress-bar {
   background-color: green;
+}
+#strength::-webkit-progress-value {
+  background-color: green;
+}
+#strength {
+  color: green;
 }
 #speed::-moz-progress-bar {
   background-color: blue;
 }
+#speed::-webkit-progress-value {
+  background-color: blue;
+}
+#speed {
+  color: blue;
+}
 #power::-moz-progress-bar {
   background-color: orangered;
+}
+#power::-webkit-progress-value {
+  background-color: orangered;
+}
+#power {
+  color: orangered;
 }
 figure {
   display: flex;
