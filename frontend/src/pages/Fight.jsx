@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import propTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import Character from "../components/Character";
+import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
@@ -40,14 +42,15 @@ function Fight({ hero, bossesList }) {
 
   const useWeapon = (weapon) => {
     let damage = 1;
+    if (heroStats[weapon] > 0) {
+      if (weapon === bossWeakness) {
+        damage = 10;
+      }
 
-    if (weapon === bossWeakness) {
-      damage = 10;
-    }
-
-    setBossLife(Math.max(bossLife - damage, 0));
-    const newStat = Math.max(heroStats[weapon] - 1, 0);
-    setHeroStats({ ...heroStats, [weapon]: newStat });
+      setBossLife(Math.max(bossLife - damage, 0));
+      const newStat = Math.max(heroStats[weapon] - 1, 0);
+      setHeroStats({ ...heroStats, [weapon]: newStat });
+    } else toast(`Not enouth ${[weapon]}`);
   };
 
   useEffect(() => {
@@ -76,6 +79,7 @@ function Fight({ hero, bossesList }) {
         alt="fight"
       />
       <Character character={hero} />
+      <ToastContainer />
       <div className="buttons">
         <button
           onClick={() => {
