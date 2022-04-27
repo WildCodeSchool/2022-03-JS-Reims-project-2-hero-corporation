@@ -5,6 +5,7 @@ import axios from "axios";
 import Home from "./Home";
 import SelectHero from "./SelectHero";
 import Fight from "./Fight";
+import Endgame from "./Endgame";
 
 function Road() {
   const [characters, setCharacters] = useState([]);
@@ -50,6 +51,7 @@ function Road() {
           />
         }
       />
+      <Route path="/endgame" element={<Endgame />} />
     </Routes>
   );
 }
