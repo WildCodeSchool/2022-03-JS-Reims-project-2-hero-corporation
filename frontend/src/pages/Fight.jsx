@@ -55,6 +55,19 @@ function Fight({ boss, hero }) {
 
   return (
     <>
+      <progress
+        id="bosslife"
+        max={
+          boss.powerstats.intelligence +
+          boss.powerstats.strength +
+          boss.powerstats.speed +
+          boss.powerstats.power
+        }
+        value={bossLife}
+      >
+        bossLife
+      </progress>
+
       <Character character={boss} />
       <img
         src="./src/assets/images/fight.png"
