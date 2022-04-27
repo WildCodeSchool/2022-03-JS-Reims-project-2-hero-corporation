@@ -37,14 +37,16 @@ function Fight({ boss, hero }) {
 
   const useWeapon = (weapon) => {
     let damage = 1;
+    if (heroStats[weapon] > 0) {
+      if (weapon === bossWeakness) {
+        damage = 10;
+      }
 
-    if (weapon === bossWeakness) {
-      damage = 10;
+      setBossLife(Math.max(bossLife - damage, 0));
+      const newStat = Math.max(heroStats[weapon] - 1, 0);
+      setHeroStats({ ...heroStats, [weapon]: newStat });
     }
-
-    setBossLife(Math.max(bossLife - damage, 0));
-    const newStat = Math.max(heroStats[weapon] - 1, 0);
-    setHeroStats({ ...heroStats, [weapon]: newStat });
+    console.warn("Not enougth attack");
   };
 
   useEffect(() => {
