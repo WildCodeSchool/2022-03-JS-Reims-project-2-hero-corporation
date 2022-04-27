@@ -6,7 +6,8 @@ import Home from "./Home";
 import SelectHero from "./SelectHero";
 import Fight from "./Fight";
 import Endgame from "./Endgame";
-import bossesID from "../components/BossesID";
+
+const bossesID = [639, 320, 141, 532, 655]; // Stromtrooper, Heat-Wave, Bullseye, Pyro, Thanos
 
 function Road() {
   const [characters, setCharacters] = useState([]);
