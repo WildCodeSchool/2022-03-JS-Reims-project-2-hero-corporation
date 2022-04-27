@@ -58,6 +58,11 @@ function Fight({ boss, hero }) {
       />
       <Character character={hero} />
       <div className="buttons">
+        <h2>{hero.powerstats.intelligence}</h2>
+        <h2>{hero.powerstats.speed}</h2>
+        <h2>{hero.powerstats.power}</h2>
+        <h2>{hero.powerstats.strength}</h2>
+
         <button
           onClick={() => useWeapon("intelligence")}
           className="intelligence"
