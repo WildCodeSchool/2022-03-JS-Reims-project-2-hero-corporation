@@ -1,7 +1,7 @@
 function Home() {
   return (
     <img
-      src="/src/assets/images/HeroCorporation-logo-22.png"
+      src="/src/assets/images/hero-corporation-logo-mobile.png"
       alt="Hero Corporation Logo"
       className="HeroCorpLogo"
     />

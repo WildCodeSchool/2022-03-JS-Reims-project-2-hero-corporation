@@ -2,21 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --red: rgb(191, 66, 55);
+  --yellow: rgb(246, 202, 69);
+  --green: rgb(107, 173, 92);
+  --light-blue: rgb(189, 219, 232);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: "Bangers";
   src: url(/src/assets/font/Bangers-Regular.ttf);
+}
+@font-face {
   font-family: "Antic";
   src: url(/src/assets/font/Antic-Regular.ttf);
 }
 
 body {
-  overflow: scroll;
-  background-image: url("/src/assets/images/backgroud-city-rays.png");
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url("./assets/images/background-hc-mobile.png");
   background-size: cover;
-  color: white;
+  color: black;
 }
+
 ul {
   display: flex;
   flex-direction: row;
@@ -27,13 +39,13 @@ li {
   list-style-type: none;
 }
 p {
-  font-family: "ComicNeue-Angular-Regular";
+  font-family: "Antic";
   color: white;
   display: flex;
   flex-direction: column;
 }
 figcaption h1 {
-  font-family: "Bangers-Regular";
+  font-family: "Bangers";
 }
 .start {
   max-width: 400px;
@@ -109,4 +121,18 @@ figcaption h1 {
 }
 .hclogo {
   max-width: 15vh;
+}
+
+.footer {
+  display: none;
+}
+
+@media screen and (min-width: 481px) {
+  body {
+    overflow: scroll;
+    background-image: url("./assets/images/background-hc-desktop.png");
+    background-position: center;
+    background-size: cover;
+    color: black;
+  }
 }
