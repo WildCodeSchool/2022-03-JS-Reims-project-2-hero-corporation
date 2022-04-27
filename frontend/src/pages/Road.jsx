@@ -9,7 +9,9 @@ import Fight from "./Fight";
 function Road() {
   const [characters, setCharacters] = useState([]);
   const [selectedHero, setSelectedHero] = useState();
+  const [bossesList, setBossesList] = useState();
 
+  const bossesID = [639, 320, 141, 532, 655]; // Stromtrooper, Heat-Wave, Bullseye, Pyro, Thanos
   const boss = (element) => element.id === 655;
 
   useEffect(() => {
@@ -17,7 +19,11 @@ function Road() {
       .get("https://akabab.github.io/superhero-api/api/all.json")
       .then((response) => {
         setCharacters(response.data);
+        setBossesList(
+          response.data.filter((element) => bossesID.includes(element.id))
+        );
       });
+    setBossesList(bossesID);
   }, []);
 
   return (
@@ -35,7 +41,14 @@ function Road() {
       />
       <Route
         path="/fight"
-        element={<Fight boss={characters.find(boss)} hero={selectedHero} />}
+        element={
+          <Fight
+            boss={characters.find(boss)}
+            hero={selectedHero}
+            bossesList={bossesList}
+            setBossesList={setBossesList}
+          />
+        }
       />
     </Routes>
   );
