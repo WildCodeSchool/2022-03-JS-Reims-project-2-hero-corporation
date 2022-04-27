@@ -1,40 +1,44 @@
 import { useEffect, useState } from "react";
+import propTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Character from "../components/Character";
 import "react-toastify/dist/ReactToastify.css";
 
-function Fight({ boss, hero }) {
-  const [bossLife, setBossLife] = useState(0);
+function Fight({ hero, bossesList }) {
+  const navigate = useNavigate();
+  const [bossLife, setBossLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
+  const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
   const maxBossLife =
-    boss.powerstats.intelligence +
-    boss.powerstats.strength +
-    boss.powerstats.speed +
-    boss.powerstats.power;
+    currentBoss.powerstats.intelligence +
+    currentBoss.powerstats.strength +
+    currentBoss.powerstats.speed +
+    currentBoss.powerstats.power;
   useEffect(() => {
     setBossLife(maxBossLife);
 
     const weaknessValue = Math.min(
-      boss.powerstats.intelligence,
-      boss.powerstats.strength,
-      boss.powerstats.speed,
-      boss.powerstats.power
+      currentBoss.powerstats.intelligence,
+      currentBoss.powerstats.strength,
+      currentBoss.powerstats.speed,
+      currentBoss.powerstats.power
     );
 
-    if (weaknessValue === boss.powerstats.intelligence) {
+    if (weaknessValue === currentBoss.powerstats.intelligence) {
       setBossWeakness("intelligence");
     }
-    if (weaknessValue === boss.powerstats.strength) {
+    if (weaknessValue === currentBoss.powerstats.strength) {
       setBossWeakness("strength");
     }
-    if (weaknessValue === boss.powerstats.speed) {
+    if (weaknessValue === currentBoss.powerstats.speed) {
       setBossWeakness("speed");
     }
-    if (weaknessValue === boss.powerstats.power) {
+    if (weaknessValue === currentBoss.powerstats.power) {
       setBossWeakness("power");
     }
-  }, [boss]);
+  }, [currentBoss]);
 
   const useWeapon = (weapon) => {
     let damage = 1;
@@ -51,7 +55,11 @@ function Fight({ boss, hero }) {
 
   useEffect(() => {
     if (bossLife === 0) {
-      console.warn("Hello");
+      if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
+        setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
+      } else {
+        navigate("/endgame");
+      }
     }
   }, [bossLife]);
 
@@ -64,7 +72,7 @@ function Fight({ boss, hero }) {
         bossLife
       </progress>
 
-      <Character character={boss} />
+      <Character character={currentBoss} />
       <img
         src="./src/assets/images/fight.png"
         className="fightimg"
@@ -118,8 +126,8 @@ function Fight({ boss, hero }) {
   );
 }
 Fight.propTypes = {
-  boss: Character.propTypes.character.isRequired,
   hero: Character.propTypes.character.isRequired,
+  bossesList: propTypes.arrayOf(Character.propTypes.character).isRequired,
 };
 
 export default Fight;
