@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Character from "../components/Character";
 import CharacterType from "../components/CharacterType";
 import "../components/SelectHero.css";
@@ -22,13 +23,13 @@ function SelectHero({ characters, setSelectedHero }) {
           </li>
         ))}
       </ul>
-      <div className="start">
+      <Link to="/fight">
         <img
           src="/src/assets/images/start.png"
           alt="start img"
           className="start"
         />
-      </div>
+      </Link>
       <ul>
         {characters.filter(heroesOnly).map((character) => (
           <li key={character.id}>
