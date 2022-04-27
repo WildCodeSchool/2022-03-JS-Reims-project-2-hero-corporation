@@ -1,0 +1,43 @@
+:root {
+  --red: rgb(191, 66, 55);
+  --yellow: rgb(246, 202, 69);
+  --green: rgb(107, 173, 92);
+  --light-blue: rgb(189, 219, 232);
+  --purple: rgb(150, 30, 161);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Bangers";
+  src: url(/src/assets/font/Bangers-Regular.ttf);
+}
+@font-face {
+  font-family: "Antic";
+  src: url(/src/assets/font/Antic-Regular.ttf);
+}
+
+.fight {
+  position: relative;
+  width: 40vw;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: white;
+  border: 4mm ridge var(--red);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+}
+
+.fight figcaption {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  color: white;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 481px) {
+}

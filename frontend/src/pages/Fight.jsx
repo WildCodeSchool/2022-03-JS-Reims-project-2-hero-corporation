@@ -55,13 +55,13 @@ function Fight({ boss, hero }) {
 
   return (
     <>
-      <Character character={boss} />
+      <Character character={boss} className="fight-boss" />
       <img
         src="./src/assets/images/fight.png"
         className="fightimg"
         alt="fight"
       />
-      <Character character={hero} />
+      <Character character={hero} className="fight-hero" />
       <div className="buttons">
         <button
           onClick={() => {

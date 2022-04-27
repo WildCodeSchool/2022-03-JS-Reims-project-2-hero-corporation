@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
 import "./Character.css";
+import "./cards-fighters.css";
 import CharacterType from "./CharacterType";
 
 function Character({ character, details }) {
   return (
-    <figure>
+    <figure className="selectHero fight">
       <img src={character.images.sm} alt={character.name} />
       <figcaption>
         <h3>{character.name}</h3>

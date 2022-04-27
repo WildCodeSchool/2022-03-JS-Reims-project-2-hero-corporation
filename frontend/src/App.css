@@ -59,10 +59,11 @@ figcaption h1 {
   padding: 1rem;
 }
 .fightimg {
-  max-width: 300px;
+  max-width: 200px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin: 1rem;
 }
 /* Début boutons d'attaque */
 .buttons {
@@ -75,6 +76,9 @@ figcaption h1 {
   font-size: 1.25rem;
   letter-spacing: 10rem;
   color: white;
+}
+.buttons:focus {
+  outline: none;
 }
 
 .intelligence {
@@ -112,7 +116,8 @@ figcaption h1 {
 /* Fin boutons d'attaque */
 
 .hclogo {
-  max-width: 15vh;
+  max-width: 5vh;
+  margin: 0.75rem;
 }
 
 .footer {
