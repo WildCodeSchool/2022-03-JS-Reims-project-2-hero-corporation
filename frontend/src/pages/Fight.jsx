@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Character from "../components/Character";
 import { ToastContainer, toast } from "react-toastify";
+import Character from "../components/Character";
 import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ boss, hero }) {
