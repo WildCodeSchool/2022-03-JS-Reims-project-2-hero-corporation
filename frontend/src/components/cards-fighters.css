@@ -20,6 +20,7 @@
   margin: 1rem 1rem;
   display: flex;
   background-color: beige;
+  align-items: center;
 }
 
 .hero-image {
@@ -28,8 +29,8 @@
   border: 3px solid black;
 }
 .hero-name {
-  position: absolute;
-  top: 0.5rem;
+  position: relative;
+  top: 0.75rem;
   font-family: "Bangers";
   font-size: x-large;
   letter-spacing: 0.05rem;
@@ -40,7 +41,7 @@
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   color: var(--yellow);
-  z-index: 10;
+  width: 180px;
 }
 
 @media screen and (min-width: 481px) {

@@ -65,7 +65,6 @@ function Fight({ hero, bossesList }) {
 
   return (
     <>
-<<<<<<< HEAD
       <h2>
         Boss Life {bossLife}/{maxBossLife}
       </h2>
@@ -73,18 +72,14 @@ function Fight({ hero, bossesList }) {
         bossLife
       </progress>
 
-      <Character character={currentBoss} className="fight-boss"/>
+      <Character character={currentBoss} className="fight-boss" />
       <img
         src="./src/assets/images/versus-element.png"
         className="vs-element"
         alt="versus"
       />
-<<<<<<< HEAD
-      <Character character={hero} />
-      <ToastContainer />
-=======
       <Character character={hero} className="fight-hero" />
->>>>>>> 5056d969ae1c859e39f05f10ccb62d2908bc215b
+      <ToastContainer />
       <div className="buttons">
         <button
           onClick={() => {
