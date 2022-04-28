@@ -1,12 +1,7 @@
 import Road from "../../pages/Road";
 
 function Main() {
-  return (
-    <>
-      <p>Main</p>
-      <Road />
-    </>
-  );
+  return <Road />;
 }
 
 export default Main;

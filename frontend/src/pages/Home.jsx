@@ -1,9 +1,9 @@
 function Home() {
   return (
     <img
-      src="/src/assets/images/HeroCorporation-logo-22.png"
-      alt="Hero Corporation Logo"
-      className="HeroCorpLogo"
+      src="/src/assets/images/hero-corporation-logo-mobile.png"
+      alt="hero-corporation-logo"
+      className="hero-corporation-logo"
     />
   );
 }

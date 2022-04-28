@@ -1,21 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --red: rgb(191, 66, 55);
+  --yellow: rgb(246, 202, 69);
+  --green: rgb(107, 173, 92);
+  --light-blue: rgb(189, 219, 232);
+  --purple: rgb(150, 30, 161);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
-  font-family: Bangers-Regular;
+  font-family: "Bangers";
   src: url(/src/assets/font/Bangers-Regular.ttf);
-  font-family: ComicNeue-Angular-Regular;
-  src: url(/src/assets/font/ComicNeue-Angular-Regular.ttf);
+}
+@font-face {
+  font-family: "Antic";
+  src: url(/src/assets/font/Antic-Regular.ttf);
 }
 
 body {
-  overflow: scroll;
-  background-image: url("/src/assets/images/istockphoto-515005882-612x612.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url("./assets/images/background-hc-mobile.png");
   background-size: cover;
-  color: white;
+  background-position: center;
+  color: black;
 }
+
 ul {
   display: flex;
   flex-direction: row;
@@ -26,86 +43,94 @@ li {
   list-style-type: none;
 }
 p {
-  font-family: "ComicNeue-Angular-Regular";
+  font-family: "Antic";
   color: white;
   display: flex;
   flex-direction: column;
 }
 figcaption h1 {
-  font-family: "Bangers-Regular";
+  font-family: "Bangers";
 }
 .start {
-  max-width: 400px;
+  max-width: 250px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
 }
+.vs-element {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75px;
+}
+
 .fightimg {
-  max-width: 300px;
+  max-width: 150px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin: 1rem;
 }
-
-.intelligence {
-  background-color: purple;
-  color: whitesmoke;
-}
-
-.intelligence:hover {
-  border: 2px solid gold;
-}
-
-.intelligence:active {
-  box-shadow: inset -2px -2px 3px lightpink, inset 2px 2px 3px black;
-}
-
-.strength {
-  background-color: green;
-  color: whitesmoke;
-}
-
-.strength:hover {
-  border: 2px solid gold;
-}
-
-.strength:active {
-  box-shadow: inset -2px -2px 3px lightgreen, inset 2px 2px 3px black;
-}
-
-.speed {
-  background-color: blue;
-  color: whitesmoke;
-}
-
-.speed:hover {
-  border: 2px solid gold;
-}
-
-.speed:active {
-  box-shadow: inset -2px -2px 3px lightblue, inset 2px 2px 3px black;
-}
-
-.power {
-  background-color: orangered;
-  color: whitesmoke;
-}
-
-.power:hover {
-  border: 2px solid gold;
-}
-
-.power:active {
-  box-shadow: inset -2px -2px 3px lightsalmon, inset 2px 2px 3px black;
-}
-
+/**** Début boutons d'attaque ****/
 .buttons {
   display: grid;
-  grid: repeat(2, 60px) / auto-flow 80px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row: 2;
   gap: 0.5rem;
   justify-content: center;
+  font-family: "Bangers";
+  font-size: 1.25rem;
+  letter-spacing: 10rem;
+  color: white;
 }
+.buttons button {
+  background-color: black;
+}
+.buttons:focus {
+  outline: none;
+}
+/* gestion des hovers sur les boutons */
+.intelligence:hover {
+  color: var(--light-blue);
+}
+.strength:hover {
+  color: var(--green);
+}
+.speed:hover {
+  color: var(--red);
+}
+.power:hover {
+  color: var(--purple);
+}
+/* fin des hovers bouttons */
+/* Fin boutons d'attaque */
+
 .hclogo {
-  max-width: 15vh;
+  max-width: 5vh;
+  margin: 0.75rem;
 }
+
+.footer {
+  display: none;
+}
+
+/* Début du responsive */
+@media screen and (min-width: 481px) {
+  body {
+    overflow: scroll;
+    background-image: url("./assets/images/background-hc-desktop.png");
+    background-position: center;
+    background-size: cover;
+    color: black;
+  }
+
+  .fightimg {
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 1rem;
+  }
+}
+
+/* Fin du responsive */
