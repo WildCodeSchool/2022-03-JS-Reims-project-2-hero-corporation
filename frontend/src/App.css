@@ -52,20 +52,26 @@ figcaption h1 {
   font-family: "Bangers";
 }
 .start {
-  max-width: 400px;
+  max-width: 250px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
 }
+.vs-element {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75px;
+}
+
 .fightimg {
-  max-width: 200px;
+  max-width: 150px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin: 1rem;
 }
-/* Début boutons d'attaque */
+/**** Début boutons d'attaque ****/
 .buttons {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -77,42 +83,26 @@ figcaption h1 {
   letter-spacing: 10rem;
   color: white;
 }
+.buttons button {
+  background-color: black;
+}
 .buttons:focus {
   outline: none;
 }
-
-.intelligence {
-  background-color: black;
-  color: white;
-}
+/* gestion des hovers sur les boutons */
 .intelligence:hover {
   color: var(--light-blue);
-}
-
-.strength {
-  background-color: black;
-  color: white;
 }
 .strength:hover {
   color: var(--green);
 }
-
-.speed {
-  background-color: black;
-  color: white;
-}
 .speed:hover {
   color: var(--red);
-}
-
-.power {
-  background-color: rgb(0, 0, 0);
-  color: white;
 }
 .power:hover {
   color: var(--purple);
 }
-
+/* fin des hovers bouttons */
 /* Fin boutons d'attaque */
 
 .hclogo {
@@ -132,6 +122,14 @@ figcaption h1 {
     background-position: center;
     background-size: cover;
     color: black;
+  }
+
+  .fightimg {
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 1rem;
   }
 }
 

@@ -57,9 +57,9 @@ function Fight({ boss, hero }) {
     <>
       <Character character={boss} className="fight-boss" />
       <img
-        src="./src/assets/images/fight.png"
-        className="fightimg"
-        alt="fight"
+        src="./src/assets/images/versus-element.png"
+        className="vs-element"
+        alt="versus"
       />
       <Character character={hero} className="fight-hero" />
       <div className="buttons">
