@@ -72,13 +72,13 @@ function Fight({ hero, bossesList }) {
         bossLife
       </progress>
 
-      <Character character={currentBoss} />
+      <Character character={currentBoss} className="fight-boss" />
       <img
-        src="./src/assets/images/fight.png"
-        className="fightimg"
-        alt="fight"
+        src="./src/assets/images/versus-element.png"
+        className="vs-element"
+        alt="versus"
       />
-      <Character character={hero} />
+      <Character character={hero} className="fight-hero" />
       <ToastContainer />
       <div className="buttons">
         <button
@@ -88,8 +88,8 @@ function Fight({ hero, bossesList }) {
           className="intelligence"
           type="button"
         >
-          <h2>{hero.powerstats.intelligence}</h2>
           <h2>{heroStats.intelligence}</h2>
+          <h2>{hero.powerstats.intelligence}</h2>
         </button>
         <button
           onClick={() => {
@@ -98,8 +98,8 @@ function Fight({ hero, bossesList }) {
           className="strength"
           type="button"
         >
-          <h2>{hero.powerstats.strength}</h2>
           <h2>{heroStats.strength}</h2>
+          <h2>{hero.powerstats.strength}</h2>
         </button>
         <button
           onClick={() => {
@@ -108,8 +108,8 @@ function Fight({ hero, bossesList }) {
           className="speed"
           type="button"
         >
-          <h2>{hero.powerstats.speed}</h2>
           <h2>{heroStats.speed}</h2>
+          <h2>{hero.powerstats.speed}</h2>
         </button>
         <button
           onClick={() => {
@@ -118,8 +118,8 @@ function Fight({ hero, bossesList }) {
           className="power"
           type="button"
         >
-          <h2>{hero.powerstats.power}</h2>
           <h2>{heroStats.power}</h2>
+          <h2>{hero.powerstats.power}</h2>
         </button>
       </div>
     </>

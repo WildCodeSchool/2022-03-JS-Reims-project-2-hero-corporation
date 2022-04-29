@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Character from "../components/Character";
 import CharacterType from "../components/CharacterType";
-import "../components/SelectHero.css";
 
 const heroIds = [346, 285, 289, 38, 498, 720];
 
