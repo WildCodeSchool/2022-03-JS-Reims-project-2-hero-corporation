@@ -21,8 +21,6 @@ function Character({ character, details }) {
                     id="intelligence"
                     max="100"
                     value={character.powerstats.intelligence}
-                    // state heroIntelligence => set change en function des regle du jeu, default egale character.powerstats.intelligence
-                    // value={heroIntelligence}
                   >
                     {character.powerstats.intelligence}
                   </progress>
