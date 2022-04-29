@@ -1,7 +1,9 @@
+import Logo from "../assets/images/hero-corporation-logo-mobile.png";
+
 function Home() {
   return (
     <img
-      src="/src/assets/images/hero-corporation-logo-mobile.png"
+      src={Logo}
       alt="hero-corporation-logo"
       className="hero-corporation-logo"
     />
