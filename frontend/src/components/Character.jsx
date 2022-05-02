@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import "./Character.css";
-import "./cards-fighters.css";
 import CharacterType from "./CharacterType";
 
 function Character({ character, details }) {
