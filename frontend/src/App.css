@@ -33,24 +33,6 @@ body {
   color: black;
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-li {
-  list-style-type: none;
-}
-p {
-  font-family: "Antic";
-  color: white;
-  display: flex;
-  flex-direction: column;
-}
-figcaption h1 {
-  font-family: "Bangers";
-}
 .start {
   max-width: 250px;
   display: block;
@@ -83,9 +65,11 @@ figcaption h1 {
   letter-spacing: 10rem;
   color: white;
 }
+
 .buttons button {
   background-color: black;
 }
+
 .buttons:focus {
   outline: none;
 }
@@ -114,8 +98,15 @@ figcaption h1 {
   display: none;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Début du responsive */
-@media screen and (min-width: 481px) {
+@media screen and (orientation: landscape) {
   body {
     overflow: scroll;
     background-image: url("./assets/images/background-hc-desktop.png");
@@ -124,6 +115,9 @@ figcaption h1 {
     color: black;
   }
 
+  main {
+    flex-direction: row;
+  }
   .fightimg {
     max-width: 200px;
     display: block;

@@ -38,7 +38,9 @@ function SelectHero({ characters, setSelectedHero }) {
         >
           previous
         </button>
-        {hero && <Character character={hero} details />}
+        <div className="hero-selected">
+          {hero && <Character character={hero} details />}
+        </div>
         <button
           type="button"
           className="nexthero"
