@@ -35,6 +35,8 @@
   border-right: var(--border);
   object-fit: cover;
   box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .hero-name {
