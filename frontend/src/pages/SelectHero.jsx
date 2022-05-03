@@ -17,7 +17,14 @@ function SelectHero({ characters, setSelectedHero }) {
   return (
     <>
       <div className="bossSelect">
-        {boss && <Character character={boss} details />}
+        {boss && (
+          <Character
+            character={boss}
+            details
+            figcaption
+            className="boss-container selectHero"
+          />
+        )}
       </div>
       <Link to="/fight" onClick={() => setSelectedHero(hero)}>
         <img
@@ -39,7 +46,14 @@ function SelectHero({ characters, setSelectedHero }) {
           previous
         </button>
         <div className="hero-selected">
-          {hero && <Character character={hero} details />}
+          {hero && (
+            <Character
+              character={hero}
+              details
+              figcaption
+              className="hero-container selectHero"
+            />
+          )}
         </div>
         <button
           type="button"

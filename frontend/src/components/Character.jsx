@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import "./Character.css";
 import CharacterType from "./CharacterType";
 
-function Character({ character, details }) {
+function Character({ character, details, figcaption, className }) {
   return (
-    <article className="hero-container">
+    <article className={className}>
       <h3 className="hero-name">{character.name}</h3>
       <figure className="hero-image-container">
         <img
@@ -12,7 +12,9 @@ function Character({ character, details }) {
           src={character.images.lg}
           alt={character.name}
         />
-        <figcaption className="hero-biography">Lorem ipsum</figcaption>
+        {figcaption && (
+          <figcaption className="hero-biography">Lorem ipsum</figcaption>
+        )}
       </figure>
       {details && (
         <div className="hero-stats">
@@ -37,8 +39,12 @@ function Character({ character, details }) {
 Character.propTypes = {
   character: CharacterType.isRequired,
   details: PropTypes.bool,
+  figcaption: PropTypes.bool,
+  className: PropTypes.string,
 };
 Character.defaultProps = {
   details: false,
+  figcaption: false,
+  className: " ",
 };
 export default Character;
