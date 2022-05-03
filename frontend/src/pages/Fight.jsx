@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import propTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useModal } from "react-hooks-use-modal";
 import Character from "../components/Character";
+import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
@@ -12,6 +14,10 @@ function Fight({ hero, bossesList }) {
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
+  const [Modal, open, close, isOpen] = useModal("root", {
+    preventScroll: true,
+    closeOnOverlayClick: false,
+  });
   const maxBossLife =
     currentBoss.powerstats.intelligence +
     currentBoss.powerstats.strength +
@@ -75,6 +81,12 @@ function Fight({ hero, bossesList }) {
     setHeroLife(maxHeroLife);
   }, []);
 
+  useEffect(() => {
+    if (heroLife === 0) {
+      open();
+    }
+  }, [heroLife]);
+
   return (
     <>
       <h2>
@@ -134,6 +146,7 @@ function Fight({ hero, bossesList }) {
           <h2>{hero.powerstats.power}</h2>
         </button>
       </div>
+      <HeroLossModal Modal={Modal} open={open} close={close} isOpen={isOpen} />
     </>
   );
 }
