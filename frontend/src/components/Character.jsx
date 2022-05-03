@@ -17,36 +17,16 @@ function Character({ character, details }) {
       {details && (
         <div className="hero-stats">
           <div className="intelligence-stats">
-            Intelligence :
-            <progress
-              id="intelligence"
-              max="100"
-              value={character.powerstats.intelligence}
-            >
-              {character.powerstats.intelligence}
-            </progress>
+            {character.powerstats.intelligence} <h4>Intelligence</h4>
           </div>
           <div className="strength-stats">
-            Strength :
-            <progress
-              id="strength"
-              max="100"
-              value={character.powerstats.strength}
-            >
-              {character.powerstats.strength}
-            </progress>
+            {character.powerstats.strength} <h4>Strength</h4>
           </div>
           <div className="speed-stats">
-            Speed :
-            <progress id="speed" max="100" value={character.powerstats.speed}>
-              {character.powerstats.speed}
-            </progress>
+            {character.powerstats.speed} <h4>Speed</h4>
           </div>
           <div className="power-stats">
-            Power :
-            <progress id="power" max="100" value={character.powerstats.power}>
-              {character.powerstats.power}
-            </progress>
+            {character.powerstats.power} <h4>Power</h4>
           </div>
         </div>
       )}
