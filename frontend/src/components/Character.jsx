@@ -1,74 +1,58 @@
 import PropTypes from "prop-types";
 import "./Character.css";
-import "./cards-fighters.css";
 import CharacterType from "./CharacterType";
 
-function Character({ character, details }) {
+function Character({ character, details, figcaption, className }) {
   return (
-    <figure className="selectHero fight">
-      <figcaption className="figure-container">
-        <div className="figure-background">
-          <div className="hero-image">
-            <img src={character.images.sm} alt={character.name} />
+    <article className={className}>
+      <h3 className="hero-name">{character.name}</h3>
+      <figure className="hero-image-container">
+        <img
+          className="hero-image"
+          src={character.images.lg}
+          alt={character.name}
+        />
+        {figcaption && (
+          <figcaption className="hero-biography">
+            <p>
+              Hi Im {character.biography.fullName} race of{" "}
+              {character.appearance.race} I measure{" "}
+              {character.appearance.height[0]} and i weight{" "}
+              {character.appearance.weight[0]} from{" "}
+              {character.biography.publisher}. Come play with me !
+            </p>
+          </figcaption>
+        )}
+      </figure>
+      {details && (
+        <div className="hero-stats">
+          <div className="intelligence-stats">
+            {character.powerstats.intelligence} <h4>Intelligence</h4>
           </div>
-          <h3 className="hero-name">{character.name}</h3>
-          <div className="all-stats">
-            {details && (
-              <p>
-                <div className="intelligence-stats">
-                  Intelligence :
-                  <progress
-                    id="intelligence"
-                    max="100"
-                    value={character.powerstats.intelligence}
-                  >
-                    {character.powerstats.intelligence}
-                  </progress>
-                </div>
-                <div className="strength-stats">
-                  Strength :
-                  <progress
-                    id="strength"
-                    max="100"
-                    value={character.powerstats.strength}
-                  >
-                    {character.powerstats.strength}
-                  </progress>
-                </div>
-                <div className="speed-stats">
-                  Speed :
-                  <progress
-                    id="speed"
-                    max="100"
-                    value={character.powerstats.speed}
-                  >
-                    {character.powerstats.speed}
-                  </progress>
-                </div>
-                <div className="power-stats">
-                  Power :
-                  <progress
-                    id="power"
-                    max="100"
-                    value={character.powerstats.power}
-                  >
-                    {character.powerstats.power}
-                  </progress>
-                </div>
-              </p>
-            )}
+          <div className="strength-stats">
+            {character.powerstats.strength} <h4>Strength</h4>
+          </div>
+          <div className="speed-stats">
+            {character.powerstats.speed} <h4>Speed</h4>
+          </div>
+          <div className="power-stats">
+            {character.powerstats.power} <h4>Power</h4>
           </div>
         </div>
-      </figcaption>
-    </figure>
+      )}
+    </article>
   );
 }
 
 Character.propTypes = {
   character: CharacterType.isRequired,
   details: PropTypes.bool,
+  figcaption: PropTypes.bool,
+  className: PropTypes.string,
 };
 Character.defaultProps = {
   details: false,
+  figcaption: false,
+  className: " ",
 };
 export default Character;

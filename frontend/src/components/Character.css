@@ -1,37 +1,125 @@
-#intelligence::-moz-progress-bar {
-  background-color: purple;
+.hero-container {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 220px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--red);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  text-align: center;
 }
 
-#intelligence::-webkit-progress-value {
-  background-color: purple;
+.boss-container {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 360px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--green);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  text-align: center;
 }
-#intelligence {
-  color: purple;
+.boss-container .hero-biography {
+  display: flex;
+  align-items: center;
 }
-#strength::-moz-progress-bar {
-  background-color: green;
+.boss-container .hero-image-container {
+  flex-direction: row;
 }
-#strength::-webkit-progress-value {
-  background-color: green;
+.fight-boss {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 200px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--green);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
 }
-#strength {
-  color: green;
+.fight-hero {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 200px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--red);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
 }
-#speed::-moz-progress-bar {
-  background-color: blue;
+
+.hero-image-container,
+.hero-biography {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
-#speed::-webkit-progress-value {
-  background-color: blue;
+
+.hero-image-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-right: var(--border);
+  padding: 0 1rem 1rem 1rem;
+  background-color: beige;
+  align-items: stretch;
 }
-#speed {
-  color: blue;
+
+.hero-image {
+  width: 100%;
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-right: var(--border);
+  object-fit: cover;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
-#power::-moz-progress-bar {
-  background-color: orangered;
+
+.hero-name {
+  font-family: "Bangers";
+  font-size: x-large;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  color: var(--yellow);
 }
-#power::-webkit-progress-value {
-  background-color: orangered;
+
+.hero-stats {
+  position: absolute;
 }
-#power {
-  color: orangered;
+
+.hero-biography {
+  margin-top: 1rem;
+  border: var(--border);
+  border-radius: 25px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+@media screen and (orientation: landscape) {
+  .hero-container {
+    width: 280px;
+  }
+  .boss-container {
+    width: 550px;
+  }
+  .fight-boss {
+    width: 300px;
+  }
+  .fight-hero {
+    width: 300px;
+  }
 }
