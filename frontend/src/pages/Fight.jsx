@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
   const [bossLife, setBossLife] = useState(null);
+  const [heroLife, setHeroLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
@@ -16,6 +17,12 @@ function Fight({ hero, bossesList }) {
     currentBoss.powerstats.strength +
     currentBoss.powerstats.speed +
     currentBoss.powerstats.power;
+  const maxHeroLife =
+    hero.powerstats.intelligence +
+    hero.powerstats.strength +
+    hero.powerstats.speed +
+    hero.powerstats.power;
+
   useEffect(() => {
     setBossLife(maxBossLife);
 
@@ -47,7 +54,8 @@ function Fight({ hero, bossesList }) {
         damage = 10;
       }
 
-      setBossLife(Math.max(bossLife - damage, 0));
+      setBossLife(Math.max(bossLife - 1, 0));
+      setHeroLife(Math.max(heroLife - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
@@ -62,6 +70,10 @@ function Fight({ hero, bossesList }) {
       }
     }
   }, [bossLife]);
+
+  useEffect(() => {
+    setHeroLife(maxHeroLife);
+  }, []);
 
   return (
     <>
