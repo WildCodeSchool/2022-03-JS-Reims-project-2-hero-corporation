@@ -104,6 +104,46 @@ main {
   justify-content: center;
   align-items: center;
 }
+.heroSelect {
+  display: flex;
+}
+.previoushero {
+  margin: 0.5rem;
+  font-size: 5rem;
+  color: orange;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.nexthero {
+  margin: 0.5rem;
+  font-size: 5rem;
+  color: orange;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.progressgame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#bosslife {
+  margin-bottom: 00.5rem;
+}
+.hero-corporation-logo {
+  max-width: 150%;
+  height: auto;
+}
+.heroAttack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+.bosslife {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Début du responsive */
 @media screen and (orientation: landscape) {
