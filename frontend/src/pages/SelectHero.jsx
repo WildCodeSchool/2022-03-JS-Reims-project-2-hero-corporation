@@ -43,7 +43,7 @@ function SelectHero({ characters, setSelectedHero }) {
             )
           }
         >
-          previous
+          &lt;
         </button>
         <div className="hero-selected">
           {hero && (
@@ -60,7 +60,7 @@ function SelectHero({ characters, setSelectedHero }) {
           className="nexthero"
           onClick={() => setSelectedIndex((selectedIndex + 1) % heroIds.length)}
         >
-          next
+          &gt;
         </button>
       </div>
     </>
