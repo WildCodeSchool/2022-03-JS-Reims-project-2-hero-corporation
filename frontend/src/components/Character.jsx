@@ -13,7 +13,15 @@ function Character({ character, details, figcaption, className }) {
           alt={character.name}
         />
         {figcaption && (
-          <figcaption className="hero-biography">Lorem ipsum</figcaption>
+          <figcaption className="hero-biography">
+            <p>
+              Hi Im {character.biography.fullName} race of{" "}
+              {character.appearance.race} I measure{" "}
+              {character.appearance.height[0]} and i weight{" "}
+              {character.appearance.weight[0]} from{" "}
+              {character.biography.publisher}. Come play with me !
+            </p>
+          </figcaption>
         )}
       </figure>
       {details && (
