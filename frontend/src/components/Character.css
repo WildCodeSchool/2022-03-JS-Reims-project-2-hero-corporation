@@ -101,40 +101,25 @@
   position: absolute;
 }
 
-#intelligence::-moz-progress-bar {
-  background-color: purple;
+.hero-biography {
+  margin-top: 1rem;
+  border: var(--border);
+  border-radius: 25px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
 }
 
-#intelligence::-webkit-progress-value {
-  background-color: purple;
-}
-#intelligence {
-  color: purple;
-}
-#strength::-moz-progress-bar {
-  background-color: green;
-}
-#strength::-webkit-progress-value {
-  background-color: green;
-}
-#strength {
-  color: green;
-}
-#speed::-moz-progress-bar {
-  background-color: blue;
-}
-#speed::-webkit-progress-value {
-  background-color: blue;
-}
-#speed {
-  color: blue;
-}
-#power::-moz-progress-bar {
-  background-color: orangered;
-}
-#power::-webkit-progress-value {
-  background-color: orangered;
-}
-#power {
-  color: orangered;
+@media screen and (orientation: landscape) {
+  .hero-container {
+    width: 280px;
+  }
+  .boss-container {
+    width: 550px;
+  }
+  .fight-boss {
+    width: 300px;
+  }
+  .fight-hero {
+    width: 300px;
+  }
 }
