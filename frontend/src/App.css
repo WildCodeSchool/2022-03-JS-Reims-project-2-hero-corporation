@@ -41,8 +41,8 @@ body {
   padding: 1rem;
 }
 .vs-element {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 5rem;
+  margin-right: 5rem;
   max-width: 75px;
 }
 
