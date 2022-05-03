@@ -33,24 +33,6 @@ body {
   color: black;
 }
 
-ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-li {
-  list-style-type: none;
-}
-p {
-  font-family: "Antic";
-  color: white;
-  display: flex;
-  flex-direction: column;
-}
-figcaption h1 {
-  font-family: "Bangers";
-}
 .start {
   max-width: 250px;
   display: block;
@@ -59,8 +41,8 @@ figcaption h1 {
   padding: 1rem;
 }
 .vs-element {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 5rem;
+  margin-right: 5rem;
   max-width: 75px;
 }
 
@@ -82,6 +64,8 @@ figcaption h1 {
   font-size: 1.25rem;
   letter-spacing: 10rem;
   color: white;
+  margin: 1rem;
+  width: 300px;
 }
 .buttons button {
   background-color: black;
@@ -111,17 +95,69 @@ figcaption h1 {
 }
 
 .footer {
-  display: none;
+  background-color: #000;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.heroSelect {
+  display: flex;
+}
+.previoushero {
+  margin: 0.5rem;
+  font-size: 5rem;
+  color: orange;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.nexthero {
+  margin: 0.5rem;
+  font-size: 5rem;
+  color: orange;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.progressgame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#bosslife {
+  margin-bottom: 00.5rem;
+}
+.hero-corporation-logo {
+  max-width: 150%;
+  height: auto;
+}
+.heroAttack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+.bosslife {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Début du responsive */
-@media screen and (min-width: 481px) {
+@media screen and (orientation: landscape) {
   body {
     overflow: scroll;
     background-image: url("./assets/images/background-hc-desktop.png");
     background-position: center;
     background-size: cover;
     color: black;
+  }
+
+  main {
+    flex-direction: row;
   }
 
   .fightimg {
@@ -132,5 +168,4 @@ figcaption h1 {
     margin: 1rem;
   }
 }
-
 /* Fin du responsive */
