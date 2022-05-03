@@ -158,6 +158,7 @@ main {
   main {
     flex-direction: row;
   }
+
   .fightimg {
     max-width: 200px;
     display: block;
@@ -166,5 +167,4 @@ main {
     margin: 1rem;
   }
 }
-
 /* Fin du responsive */
