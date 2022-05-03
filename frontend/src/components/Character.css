@@ -11,6 +11,19 @@
   position: relative;
 }
 
+.boss-container {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 280px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--green);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
 .hero-image-container,
 .hero-biography {
   margin-left: 1rem;
