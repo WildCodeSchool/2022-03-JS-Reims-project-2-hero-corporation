@@ -1,9 +1,11 @@
+import Logo from "../assets/images/hero-corporation-logo-mobile.png";
+
 function Home() {
   return (
     <img
-      src="/src/assets/images/HeroCorporation-logo-22.png"
-      alt="Hero Corporation Logo"
-      className="HeroCorpLogo"
+      src={Logo}
+      alt="hero-corporation-logo"
+      className="hero-corporation-logo"
     />
   );
 }

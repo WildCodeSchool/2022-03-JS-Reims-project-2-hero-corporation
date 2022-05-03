@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Character from "../components/Character";
 import CharacterType from "../components/CharacterType";
-import "../components/SelectHero.css";
 
 const heroIds = [346, 285, 289, 38, 498, 720];
 
@@ -17,7 +16,16 @@ function SelectHero({ characters, setSelectedHero }) {
 
   return (
     <>
-      <div className="bossSelect">{boss && <Character character={boss} />}</div>
+      <div className="bossSelect">
+        {boss && (
+          <Character
+            character={boss}
+            details
+            figcaption
+            className="boss-container selectHero"
+          />
+        )}
+      </div>
       <Link to="/fight" onClick={() => setSelectedHero(hero)}>
         <img
           src="/src/assets/images/start.png"
@@ -35,15 +43,24 @@ function SelectHero({ characters, setSelectedHero }) {
             )
           }
         >
-          previous
+          &lt;
         </button>
-        {hero && <Character character={hero} />}
+        <div className="hero-selected">
+          {hero && (
+            <Character
+              character={hero}
+              details
+              figcaption
+              className="hero-container selectHero"
+            />
+          )}
+        </div>
         <button
           type="button"
           className="nexthero"
           onClick={() => setSelectedIndex((selectedIndex + 1) % heroIds.length)}
         >
-          next
+          &gt;
         </button>
       </div>
     </>

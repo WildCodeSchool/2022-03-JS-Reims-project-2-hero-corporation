@@ -1,31 +1,126 @@
-#intelligence::-moz-progress-bar {
-  background-color: purple;
+.hero-container {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 220px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--red);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  text-align: center;
 }
-#strength::-moz-progress-bar {
-  background-color: green;
+
+.boss-container {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 360px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--green);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+  text-align: center;
 }
-#speed::-moz-progress-bar {
-  background-color: blue;
-}
-#power::-moz-progress-bar {
-  background-color: orangered;
-}
-figure {
+.boss-container .hero-biography {
   display: flex;
-  flex-direction: row-reverse;
-  backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 10px 2px black;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  width: 25vw;
+  align-items: center;
 }
-figcaption {
+.boss-container .hero-image-container {
+  flex-direction: row;
+}
+
+.fight-boss {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 200px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--green);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.fight-hero {
+  --border: 3px solid black;
+  border: var(--border);
+  align-content: center;
+  width: 200px;
+  box-sizing: border-box;
+  box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
+  background-color: var(--red);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.hero-image-container,
+.hero-biography {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.hero-image-container {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
-  color: white;
-  justify-content: space-around;
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-right: var(--border);
+  padding: 0 1rem 1rem 1rem;
+  background-color: beige;
+  align-items: stretch;
 }
-img {
-  padding: 1rem;
+
+.hero-image {
+  width: 100%;
+  border-bottom: var(--border);
+  border-left: var(--border);
+  border-right: var(--border);
+  object-fit: cover;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.hero-name {
+  font-family: "Bangers";
+  font-size: x-large;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  color: var(--yellow);
+}
+
+.hero-stats {
+  position: absolute;
+}
+
+.hero-biography {
+  margin-top: 1rem;
+  border: var(--border);
+  border-radius: 25px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+@media screen and (orientation: landscape) {
+  .hero-container {
+    width: 280px;
+  }
+  .boss-container {
+    width: 550px;
+  }
+  .fight-boss {
+    width: 300px;
+  }
+  .fight-hero {
+    width: 300px;
+  }
 }
