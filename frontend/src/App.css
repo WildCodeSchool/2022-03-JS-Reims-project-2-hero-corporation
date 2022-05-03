@@ -64,12 +64,12 @@ body {
   font-size: 1.25rem;
   letter-spacing: 10rem;
   color: white;
+  margin: 1rem;
+  width: 300px;
 }
-
 .buttons button {
   background-color: black;
 }
-
 .buttons:focus {
   outline: none;
 }
