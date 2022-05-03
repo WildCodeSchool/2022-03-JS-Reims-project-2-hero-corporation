@@ -65,62 +65,71 @@ function Fight({ hero, bossesList }) {
 
   return (
     <>
-      <h2>
-        Boss Life {bossLife}/{maxBossLife}
-      </h2>
-      <progress id="bosslife" max={maxBossLife} value={bossLife}>
-        bossLife
-      </progress>
+      <div className="progressgame">
+        <progress id="progressgame" value="20" max="100" />
+        <h2>1/5</h2>
+      </div>
 
-      <Character character={currentBoss} className="fight-boss" />
+      <div className="bosslife">
+        <h2>
+          Boss Life {bossLife}/{maxBossLife}
+        </h2>
+        <progress id="bosslife" max={maxBossLife} value={bossLife}>
+          bossLife
+        </progress>
+
+        <Character character={currentBoss} className="fight-boss" />
+      </div>
       <img
         src="./src/assets/images/versus-element.png"
         className="vs-element"
         alt="versus"
       />
-      <Character character={hero} className="fight-hero" />
-      <ToastContainer />
-      <div className="buttons">
-        <button
-          onClick={() => {
-            useWeapon("intelligence");
-          }}
-          className="intelligence"
-          type="button"
-        >
-          <h2>{heroStats.intelligence}</h2>
-          <h2>{hero.powerstats.intelligence}</h2>
-        </button>
-        <button
-          onClick={() => {
-            useWeapon("strength");
-          }}
-          className="strength"
-          type="button"
-        >
-          <h2>{heroStats.strength}</h2>
-          <h2>{hero.powerstats.strength}</h2>
-        </button>
-        <button
-          onClick={() => {
-            useWeapon("speed");
-          }}
-          className="speed"
-          type="button"
-        >
-          <h2>{heroStats.speed}</h2>
-          <h2>{hero.powerstats.speed}</h2>
-        </button>
-        <button
-          onClick={() => {
-            useWeapon("power");
-          }}
-          className="power"
-          type="button"
-        >
-          <h2>{heroStats.power}</h2>
-          <h2>{hero.powerstats.power}</h2>
-        </button>
+      <div className="heroAttack">
+        <Character character={hero} className="fight-hero" />
+        <ToastContainer />
+        <div className="buttons">
+          <button
+            onClick={() => {
+              useWeapon("intelligence");
+            }}
+            className="intelligence"
+            type="button"
+          >
+            <h2>{heroStats.intelligence}</h2>
+            <h2>{hero.powerstats.intelligence}</h2>
+          </button>
+          <button
+            onClick={() => {
+              useWeapon("strength");
+            }}
+            className="strength"
+            type="button"
+          >
+            <h2>{heroStats.strength}</h2>
+            <h2>{hero.powerstats.strength}</h2>
+          </button>
+          <button
+            onClick={() => {
+              useWeapon("speed");
+            }}
+            className="speed"
+            type="button"
+          >
+            <h2>{heroStats.speed}</h2>
+            <h2>{hero.powerstats.speed}</h2>
+          </button>
+          <button
+            onClick={() => {
+              useWeapon("power");
+            }}
+            className="power"
+            type="button"
+          >
+            <h2>{heroStats.power}</h2>
+            <h2>{hero.powerstats.power}</h2>
+          </button>
+        </div>
       </div>
     </>
   );
