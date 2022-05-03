@@ -9,7 +9,7 @@ function Character({ character, details }) {
       <figure className="hero-image-container">
         <img
           className="hero-image"
-          src={character.images.sm}
+          src={character.images.lg}
           alt={character.name}
         />
         <figcaption className="hero-biography">Lorem ipsum</figcaption>
