@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+
 import Character from "../components/Character";
 import CharacterType from "../components/CharacterType";
 
