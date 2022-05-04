@@ -37,6 +37,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+
 .rule {
   width: 20px;
   height: 20px;
@@ -106,10 +107,6 @@ nav {
 .hclogo {
   max-width: 5vh;
   margin: 0.75rem;
-}
-
-.footer {
-  background-color: #000;
 }
 
 main {

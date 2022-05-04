@@ -1,5 +1,5 @@
-import Logo from "../assets/images/hero-corporation-logo-mobile.png";
 import { Link } from "react-router-dom";
+import Logo from "../assets/images/hero-corporation-logo-mobile.png";
 
 function Home() {
   return (
