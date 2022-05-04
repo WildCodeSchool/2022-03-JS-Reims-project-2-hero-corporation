@@ -172,6 +172,7 @@ main {
 
   main {
     flex-direction: row;
+    margin-top: 8rem;
   }
 
   .fightimg {
