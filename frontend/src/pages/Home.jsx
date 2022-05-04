@@ -3,7 +3,7 @@ import Logo from "../assets/images/hero-corporation-logo-mobile.png";
 
 function Home() {
   return (
-    <>
+    <div className="flex-column">
       <img
         src={Logo}
         alt="hero-corporation-logo"
@@ -16,7 +16,7 @@ function Home() {
           className="start"
         />
       </Link>
-    </>
+    </div>
   );
 }
 
