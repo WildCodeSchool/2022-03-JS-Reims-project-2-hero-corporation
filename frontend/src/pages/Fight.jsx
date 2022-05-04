@@ -33,7 +33,6 @@ function Fight({ hero, bossesList }) {
 
   useEffect(() => {
     setBossLife(maxBossLife);
-    setTrigger(true);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -63,8 +62,8 @@ function Fight({ hero, bossesList }) {
         damage = 10;
       }
 
-      setBossLife(Math.max(bossLife - 1, 0));
       setHeroLife(Math.max(heroLife - damage, 0));
+      setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
@@ -74,7 +73,7 @@ function Fight({ hero, bossesList }) {
     if (bossLife === 0) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
-        setTrigger(false);
+        setTrigger(!trigger);
       } else {
         navigate("/endgame");
       }
@@ -94,8 +93,14 @@ function Fight({ hero, bossesList }) {
   return (
     <>
       <div className="progressgame">
-        <progress id="progressgame" value="20" max="100" />
-        <h2>1/5</h2>
+        <progress
+          id="progressgame"
+          value={bossesList.indexOf(currentBoss) + 1}
+          max={bossesList.length}
+        />
+        <h2>
+          {`${bossesList.indexOf(currentBoss) + 1} / ${bossesList.length}`}
+        </h2>
       </div>
 
       <div className="bosslife">
@@ -106,7 +111,7 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Jump when={trigger}>
+        <Jump spy={trigger}>
           <Character character={currentBoss} className="fight-boss" />
         </Jump>
       </div>
