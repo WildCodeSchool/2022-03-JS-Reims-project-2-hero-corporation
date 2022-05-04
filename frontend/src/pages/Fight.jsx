@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
-  const [trigger, setTrigger] = useState(true);
   const [bossLife, setBossLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
@@ -20,7 +19,6 @@ function Fight({ hero, bossesList }) {
     currentBoss.powerstats.power;
   useEffect(() => {
     setBossLife(maxBossLife);
-    setTrigger(true);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -60,7 +58,6 @@ function Fight({ hero, bossesList }) {
     if (bossLife === 0) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
-        setTrigger(false);
       } else {
         navigate("/endgame");
       }
@@ -82,7 +79,7 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Jump when={trigger}>
+        <Jump spy={currentBoss} timeout={1000}>
           <Character character={currentBoss} className="fight-boss" />
         </Jump>
       </div>
