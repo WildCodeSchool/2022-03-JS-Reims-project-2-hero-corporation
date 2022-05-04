@@ -21,10 +21,11 @@ function Fight({ hero, bossesList }) {
     closeOnOverlayClick: false,
   });
   const maxBossLife =
-    currentBoss.powerstats.intelligence +
-    currentBoss.powerstats.strength +
-    currentBoss.powerstats.speed +
-    currentBoss.powerstats.power;
+    (currentBoss.powerstats.intelligence +
+      currentBoss.powerstats.strength +
+      currentBoss.powerstats.speed +
+      currentBoss.powerstats.power) *
+    10;
   const maxHeroLife =
     hero.powerstats.intelligence +
     hero.powerstats.strength +
@@ -56,10 +57,15 @@ function Fight({ hero, bossesList }) {
   }, [currentBoss]);
 
   const useWeapon = (weapon) => {
-    let damage = 1;
+    let multiplier = Math.floor(heroStats[weapon] / 2.5);
+    if (hero.name === "Gladiator") {
+      multiplier = Math.floor(multiplier * 0.8);
+    }
+    const minDamage = Math.floor(multiplier * 0.5);
+    let damage = Math.max(multiplier, minDamage);
     if (heroStats[weapon] > 0) {
       if (weapon === bossWeakness) {
-        damage = 10;
+        damage = Math.floor(1.8 * damage);
       }
 
       setHeroLife((previousState) => Math.max(previousState - 1, 0));
