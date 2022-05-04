@@ -23,6 +23,9 @@
   font-family: "Antic";
   src: url(/src/assets/font/Antic-Regular.ttf);
 }
+html {
+  line-height: 1;
+}
 
 body {
   min-height: 100vh;
@@ -31,11 +34,13 @@ body {
   background-size: cover;
   background-position: center;
   color: black;
+  background-repeat: no-repeat;
 }
 nav {
+  margin-top: 00.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .rule {
@@ -159,7 +164,6 @@ main {
 /* Début du responsive */
 @media screen and (orientation: landscape) {
   body {
-    overflow: scroll;
     background-image: url("./assets/images/background-hc-desktop.png");
     background-position: center;
     background-size: cover;
