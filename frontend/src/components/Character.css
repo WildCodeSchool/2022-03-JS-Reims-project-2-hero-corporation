@@ -99,6 +99,9 @@
 
 .hero-stats {
   position: absolute;
+  top: 60px;
+  font-size: 12px;
+  left: -3px;
 }
 
 .hero-biography {
