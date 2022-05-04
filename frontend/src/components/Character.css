@@ -99,8 +99,13 @@
 
 .hero-stats {
   position: absolute;
+  top: 60px;
+  font-size: 12px;
+  left: -3px;
 }
-
+.boss-container .hero-stats {
+  display: none;
+}
 .hero-biography {
   margin-top: 1rem;
   border: var(--border);
@@ -118,6 +123,7 @@
   }
   .fight-boss {
     width: 300px;
+    margin-bottom: 10rem;
   }
   .fight-hero {
     width: 300px;

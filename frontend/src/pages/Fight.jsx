@@ -1,22 +1,44 @@
 import { useEffect, useState } from "react";
 import propTypes from "prop-types";
+import { useTimer } from "use-timer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useModal } from "react-hooks-use-modal";
 import Jump from "react-reveal/Jump";
 import Character from "../components/Character";
+import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
   const [bossLife, setBossLife] = useState(null);
+  const [heroLife, setHeroLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
+  const [Modal, open] = useModal("root", {
+    preventScroll: true,
+    closeOnOverlayClick: false,
+  });
+  const { time } = useTimer({
+    initialTime: 300,
+    timerType: "DECREMENTAL",
+    endTime: 0,
+    autostart: true,
+    onTimeOver: () => open(),
+  });
   const maxBossLife =
-    currentBoss.powerstats.intelligence +
-    currentBoss.powerstats.strength +
-    currentBoss.powerstats.speed +
-    currentBoss.powerstats.power;
+    (currentBoss.powerstats.intelligence +
+      currentBoss.powerstats.strength +
+      currentBoss.powerstats.speed +
+      currentBoss.powerstats.power) *
+    10;
+  const maxHeroLife =
+    hero.powerstats.intelligence +
+    hero.powerstats.strength +
+    hero.powerstats.speed +
+    hero.powerstats.power;
+
   useEffect(() => {
     setBossLife(maxBossLife);
 
@@ -42,13 +64,19 @@ function Fight({ hero, bossesList }) {
   }, [currentBoss]);
 
   const useWeapon = (weapon) => {
-    let damage = 1;
+    let multiplier = Math.floor(heroStats[weapon] / 2.5);
+    if (hero.name === "Gladiator") {
+      multiplier = Math.floor(multiplier * 0.8);
+    }
+    const minDamage = Math.floor(multiplier * 0.5);
+    let damage = Math.max(multiplier, minDamage);
     if (heroStats[weapon] > 0) {
       if (weapon === bossWeakness) {
-        damage = 10;
+        damage = Math.floor(1.8 * damage);
       }
 
-      setBossLife(Math.max(bossLife - damage, 0));
+      setHeroLife((previousState) => Math.max(previousState - 1, 0));
+      setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
@@ -64,13 +92,36 @@ function Fight({ hero, bossesList }) {
     }
   }, [bossLife]);
 
+  useEffect(() => {
+    setHeroLife(maxHeroLife);
+  }, []);
+
+  useEffect(() => {
+    if (heroLife === 0) {
+      open();
+    }
+  }, [heroLife]);
+  const minute = () => {
+    return Math.floor(time / 60);
+  };
+  const second = () => {
+    return time % 60 < 10 ? `0${time % 60}` : time % 60;
+  };
   return (
     <>
+      <p>
+        {minute()}:{second()}
+      </p>
       <div className="progressgame">
-        <progress id="progressgame" value="20" max="100" />
-        <h2>1/5</h2>
+        <progress
+          id="progressgame"
+          value={bossesList.indexOf(currentBoss) + 1}
+          max={bossesList.length}
+        />
+        <h2>
+          {`${bossesList.indexOf(currentBoss) + 1} / ${bossesList.length}`}
+        </h2>
       </div>
-
       <div className="bosslife">
         <h2>
           Boss Life {bossLife}/{maxBossLife}
@@ -134,6 +185,9 @@ function Fight({ hero, bossesList }) {
           </button>
         </div>
       </div>
+      <Modal>
+        <HeroLossModal />
+      </Modal>
     </>
   );
 }
