@@ -23,16 +23,36 @@
   font-family: "Antic";
   src: url(/src/assets/font/Antic-Regular.ttf);
 }
+html {
+  line-height: 1;
+  overflow: hidden;
+}
 
 body {
   min-height: 100vh;
-  min-width: 100vw;
   background-image: url("./assets/images/background-hc-mobile.png");
   background-size: cover;
   background-position: center;
   color: black;
+  background-repeat: no-repeat;
+}
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.rule {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: red;
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .start {
   max-width: 250px;
   display: block;
@@ -94,16 +114,11 @@ body {
   margin: 0.75rem;
 }
 
-.footer {
-  background-color: #000;
-}
-
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 .heroSelect {
   display: flex;
@@ -131,7 +146,7 @@ main {
   margin-bottom: 00.5rem;
 }
 .hero-corporation-logo {
-  max-width: 150%;
+  max-width: 100vw;
   height: auto;
 }
 .heroAttack {
@@ -149,7 +164,6 @@ main {
 /* Début du responsive */
 @media screen and (orientation: landscape) {
   body {
-    overflow: scroll;
     background-image: url("./assets/images/background-hc-desktop.png");
     background-position: center;
     background-size: cover;
@@ -158,6 +172,7 @@ main {
 
   main {
     flex-direction: row;
+    margin-top: 8rem;
   }
 
   .fightimg {
@@ -166,6 +181,9 @@ main {
     margin-left: auto;
     margin-right: auto;
     margin: 1rem;
+  }
+  .hero-corporation-logo {
+    height: 35vh;
   }
 }
 /* Fin du responsive */

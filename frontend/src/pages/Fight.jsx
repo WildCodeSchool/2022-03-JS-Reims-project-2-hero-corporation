@@ -102,7 +102,6 @@ function Fight({ hero, bossesList }) {
           {`${bossesList.indexOf(currentBoss) + 1} / ${bossesList.length}`}
         </h2>
       </div>
-
       <div className="bosslife">
         <h2>
           Boss Life {bossLife}/{maxBossLife}
