@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import propTypes from "prop-types";
+import { useTimer } from "use-timer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useModal } from "react-hooks-use-modal";
@@ -19,6 +20,13 @@ function Fight({ hero, bossesList }) {
   const [Modal, open] = useModal("root", {
     preventScroll: true,
     closeOnOverlayClick: false,
+  });
+  const { time } = useTimer({
+    initialTime: 300,
+    timerType: "DECREMENTAL",
+    endTime: 0,
+    autostart: true,
+    onTimeOver: () => open(),
   });
   const maxBossLife =
     currentBoss.powerstats.intelligence +
@@ -89,9 +97,17 @@ function Fight({ hero, bossesList }) {
       open();
     }
   }, [heroLife]);
-
+  const minute = () => {
+    return Math.floor(time / 60);
+  };
+  const second = () => {
+    return time % 60 < 10 ? `0${time % 60}` : time % 60;
+  };
   return (
     <>
+      <p>
+        {minute()}:{second()}
+      </p>
       <div className="progressgame">
         <progress
           id="progressgame"
