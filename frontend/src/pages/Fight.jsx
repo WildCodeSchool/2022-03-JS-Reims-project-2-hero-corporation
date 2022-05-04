@@ -3,12 +3,14 @@ import propTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useModal } from "react-hooks-use-modal";
+import Jump from "react-reveal/Jump";
 import Character from "../components/Character";
 import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
+  const [trigger, setTrigger] = useState(true);
   const [bossLife, setBossLife] = useState(null);
   const [heroLife, setHeroLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
@@ -31,6 +33,7 @@ function Fight({ hero, bossesList }) {
 
   useEffect(() => {
     setBossLife(maxBossLife);
+    setTrigger(true);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -71,6 +74,7 @@ function Fight({ hero, bossesList }) {
     if (bossLife === 0) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
+        setTrigger(false);
       } else {
         navigate("/endgame");
       }
@@ -102,7 +106,9 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Character character={currentBoss} className="fight-boss" />
+        <Jump when={trigger}>
+          <Character character={currentBoss} className="fight-boss" />
+        </Jump>
       </div>
       <img
         src="./src/assets/images/versus-element.png"
