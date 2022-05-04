@@ -69,7 +69,6 @@ function Fight({ hero, bossesList }) {
         <progress id="progressgame" value="20" max="100" />
         <h2>1/5</h2>
       </div>
-
       <div className="bosslife">
         <h2>
           Boss Life {bossLife}/{maxBossLife}

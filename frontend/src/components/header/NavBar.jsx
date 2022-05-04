@@ -10,7 +10,9 @@ function NavBar() {
           className="hclogo"
         />
       </Link>
-      <p className="rule">?</p>
+      <button type="button" className="rule">
+        ?
+      </button>
     </nav>
   );
 }
