@@ -62,7 +62,7 @@ function Fight({ hero, bossesList }) {
         damage = 10;
       }
 
-      setHeroLife(Math.max(heroLife - damage, 0));
+      setHeroLife((previousState) => Math.max(previousState - 1, 0));
       setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
