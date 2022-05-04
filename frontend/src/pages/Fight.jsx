@@ -16,7 +16,7 @@ function Fight({ hero, bossesList }) {
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
-  const [Modal, open, close, isOpen] = useModal("root", {
+  const [Modal, open] = useModal("root", {
     preventScroll: true,
     closeOnOverlayClick: false,
   });
@@ -161,7 +161,9 @@ function Fight({ hero, bossesList }) {
           </button>
         </div>
       </div>
-      <HeroLossModal Modal={Modal} open={open} close={close} isOpen={isOpen} />
+      <Modal>
+        <HeroLossModal />
+      </Modal>
     </>
   );
 }
