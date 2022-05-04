@@ -20,7 +20,6 @@ function Fight({ hero, bossesList }) {
     currentBoss.powerstats.power;
   useEffect(() => {
     setBossLife(maxBossLife);
-    setTrigger(true);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -60,7 +59,7 @@ function Fight({ hero, bossesList }) {
     if (bossLife === 0) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
-        setTrigger(false);
+        setTrigger(!trigger);
       } else {
         navigate("/endgame");
       }
@@ -82,7 +81,7 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Jump when={trigger}>
+        <Jump spy={trigger}>
           <Character character={currentBoss} className="fight-boss" />
         </Jump>
       </div>
