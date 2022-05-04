@@ -3,6 +3,7 @@ import propTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import Jump from "react-reveal/Jump";
+import Flash from "react-reveal/Flash";
 import Character from "../components/Character";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -13,6 +14,8 @@ function Fight({ hero, bossesList }) {
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
+  const [criticalHit, setCriticalHit] = useState(0);
+  const [criticalHitTrigger, setCriticalHitTrigger] = useState(false);
   const maxBossLife =
     currentBoss.powerstats.intelligence +
     currentBoss.powerstats.strength +
@@ -20,6 +23,7 @@ function Fight({ hero, bossesList }) {
     currentBoss.powerstats.power;
   useEffect(() => {
     setBossLife(maxBossLife);
+    setCriticalHitTrigger(false);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -53,6 +57,9 @@ function Fight({ hero, bossesList }) {
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
+    if (damage === 10) {
+      setCriticalHit((previousState) => previousState + 1);
+    }
   };
 
   useEffect(() => {
@@ -65,6 +72,14 @@ function Fight({ hero, bossesList }) {
       }
     }
   }, [bossLife]);
+
+  useEffect(() => {
+    if (criticalHit % 3 === 0 && criticalHit !== 0) {
+      setCriticalHitTrigger(true);
+    } else {
+      setCriticalHitTrigger(false);
+    }
+  }, [criticalHit]);
 
   return (
     <>
@@ -87,8 +102,10 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Jump spy={trigger}>
-          <Character character={currentBoss} className="fight-boss" />
+        <Jump spy={trigger} timeout={1000}>
+          <Flash when={criticalHitTrigger}>
+            <Character character={currentBoss} className="fight-boss" />
+          </Flash>
         </Jump>
       </div>
       <img
