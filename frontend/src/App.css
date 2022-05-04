@@ -181,5 +181,8 @@ main {
     margin-right: auto;
     margin: 1rem;
   }
+  .hero-corporation-logo {
+    height: 35vh;
+  }
 }
 /* Fin du responsive */
