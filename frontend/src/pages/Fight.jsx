@@ -49,7 +49,7 @@ function Fight({ hero, bossesList }) {
         damage = 10;
       }
 
-      setBossLife(Math.max(bossLife - damage, 0));
+      setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
