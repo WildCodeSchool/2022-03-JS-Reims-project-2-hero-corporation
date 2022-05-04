@@ -2,25 +2,38 @@ import { useEffect, useState } from "react";
 import propTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import { useModal } from "react-hooks-use-modal";
 import Jump from "react-reveal/Jump";
 import Flash from "react-reveal/Flash";
 import Character from "../components/Character";
+import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
   const [trigger, setTrigger] = useState(true);
   const [bossLife, setBossLife] = useState(null);
+  const [heroLife, setHeroLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
   const [criticalHit, setCriticalHit] = useState(0);
   const [criticalHitTrigger, setCriticalHitTrigger] = useState(false);
+  const [Modal, open] = useModal("root", {
+    preventScroll: true,
+    closeOnOverlayClick: false,
+  });
   const maxBossLife =
     currentBoss.powerstats.intelligence +
     currentBoss.powerstats.strength +
     currentBoss.powerstats.speed +
     currentBoss.powerstats.power;
+  const maxHeroLife =
+    hero.powerstats.intelligence +
+    hero.powerstats.strength +
+    hero.powerstats.speed +
+    hero.powerstats.power;
+
   useEffect(() => {
     setBossLife(maxBossLife);
     setCriticalHitTrigger(false);
@@ -53,6 +66,7 @@ function Fight({ hero, bossesList }) {
         damage = 10;
       }
 
+      setHeroLife(Math.max(heroLife - damage, 0));
       setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
@@ -80,6 +94,16 @@ function Fight({ hero, bossesList }) {
       setCriticalHitTrigger(false);
     }
   }, [criticalHit]);
+
+  useEffect(() => {
+    setHeroLife(maxHeroLife);
+  }, []);
+
+  useEffect(() => {
+    if (heroLife === 0) {
+      open();
+    }
+  }, [heroLife]);
 
   return (
     <>
@@ -159,6 +183,9 @@ function Fight({ hero, bossesList }) {
           </button>
         </div>
       </div>
+      <Modal>
+        <HeroLossModal />
+      </Modal>
     </>
   );
 }
