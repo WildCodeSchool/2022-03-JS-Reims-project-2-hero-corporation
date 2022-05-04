@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import propTypes from "prop-types";
+import { useTimer } from "use-timer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useModal } from "react-hooks-use-modal";
@@ -11,7 +12,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
-  const [trigger, setTrigger] = useState(true);
   const [bossLife, setBossLife] = useState(null);
   const [heroLife, setHeroLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
@@ -22,11 +22,19 @@ function Fight({ hero, bossesList }) {
     preventScroll: true,
     closeOnOverlayClick: false,
   });
+  const { time } = useTimer({
+    initialTime: 300,
+    timerType: "DECREMENTAL",
+    endTime: 0,
+    autostart: true,
+    onTimeOver: () => open(),
+  });
   const maxBossLife =
-    currentBoss.powerstats.intelligence +
-    currentBoss.powerstats.strength +
-    currentBoss.powerstats.speed +
-    currentBoss.powerstats.power;
+    (currentBoss.powerstats.intelligence +
+      currentBoss.powerstats.strength +
+      currentBoss.powerstats.speed +
+      currentBoss.powerstats.power) *
+    10;
   const maxHeroLife =
     hero.powerstats.intelligence +
     hero.powerstats.strength +
@@ -58,16 +66,21 @@ function Fight({ hero, bossesList }) {
   }, [currentBoss]);
 
   const useWeapon = (weapon) => {
-    let damage = 1;
+    let multiplier = Math.floor(heroStats[weapon] / 2.5);
+    if (hero.name === "Gladiator") {
+      multiplier = Math.floor(multiplier * 0.8);
+    }
+    const minDamage = Math.floor(multiplier * 0.5);
+    let damage = Math.max(multiplier, minDamage);
     if (heroStats[weapon] > 0) {
       if (weapon === bossWeakness) {
-        damage = 10;
+        damage = Math.floor(1.8 * damage);
       }
       if (damage === 10) {
         setCriticalHit(criticalHit + 1);
       }
 
-      setHeroLife(Math.max(heroLife - damage, 0));
+      setHeroLife((previousState) => Math.max(previousState - 1, 0));
       setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
@@ -78,7 +91,6 @@ function Fight({ hero, bossesList }) {
     if (bossLife === 0) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
-        setTrigger(!trigger);
       } else {
         navigate("/endgame");
       }
@@ -94,9 +106,17 @@ function Fight({ hero, bossesList }) {
       open();
     }
   }, [heroLife]);
-
+  const minute = () => {
+    return Math.floor(time / 60);
+  };
+  const second = () => {
+    return time % 60 < 10 ? `0${time % 60}` : time % 60;
+  };
   return (
     <>
+      <p>
+        {minute()}:{second()}
+      </p>
       <div className="progressgame">
         <progress
           id="progressgame"
@@ -115,7 +135,7 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Jump spy={trigger} timeout={1000}>
+        <Jump spy={currentBoss} timeout={1000}>
           <Flash when={criticalHit % 3 === 0}>
             <Character character={currentBoss} className="fight-boss" />
           </Flash>
