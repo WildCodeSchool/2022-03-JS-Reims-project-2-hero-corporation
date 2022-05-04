@@ -69,8 +69,14 @@ function Fight({ hero, bossesList }) {
   return (
     <>
       <div className="progressgame">
-        <progress id="progressgame" value="20" max="100" />
-        <h2>1/5</h2>
+        <progress
+          id="progressgame"
+          value={bossesList.indexOf(currentBoss) + 1}
+          max={bossesList.length}
+        />
+        <h2>
+          {`${bossesList.indexOf(currentBoss) + 1} / ${bossesList.length}`}
+        </h2>
       </div>
 
       <div className="bosslife">
