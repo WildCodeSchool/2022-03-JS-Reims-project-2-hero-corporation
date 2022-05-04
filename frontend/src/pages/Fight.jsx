@@ -18,7 +18,6 @@ function Fight({ hero, bossesList }) {
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
   const [criticalHit, setCriticalHit] = useState(0);
-  const [criticalHitTrigger, setCriticalHitTrigger] = useState(false);
   const [Modal, open] = useModal("root", {
     preventScroll: true,
     closeOnOverlayClick: false,
@@ -36,7 +35,6 @@ function Fight({ hero, bossesList }) {
 
   useEffect(() => {
     setBossLife(maxBossLife);
-    setCriticalHitTrigger(false);
 
     const weaknessValue = Math.min(
       currentBoss.powerstats.intelligence,
@@ -65,15 +63,15 @@ function Fight({ hero, bossesList }) {
       if (weapon === bossWeakness) {
         damage = 10;
       }
+      if (damage === 10) {
+        setCriticalHit(criticalHit + 1);
+      }
 
       setHeroLife(Math.max(heroLife - damage, 0));
       setBossLife((previousState) => Math.max(previousState - damage, 0));
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
-    if (damage === 10) {
-      setCriticalHit((previousState) => previousState + 1);
-    }
   };
 
   useEffect(() => {
@@ -86,14 +84,6 @@ function Fight({ hero, bossesList }) {
       }
     }
   }, [bossLife]);
-
-  useEffect(() => {
-    if (criticalHit % 3 === 0 && criticalHit !== 0) {
-      setCriticalHitTrigger(true);
-    } else {
-      setCriticalHitTrigger(false);
-    }
-  }, [criticalHit]);
 
   useEffect(() => {
     setHeroLife(maxHeroLife);
@@ -127,7 +117,7 @@ function Fight({ hero, bossesList }) {
         </progress>
 
         <Jump spy={trigger} timeout={1000}>
-          <Flash when={criticalHitTrigger}>
+          <Flash when={criticalHit % 3 === 0}>
             <Character character={currentBoss} className="fight-boss" />
           </Flash>
         </Jump>
