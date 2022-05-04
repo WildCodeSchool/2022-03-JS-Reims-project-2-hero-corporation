@@ -10,7 +10,9 @@ function NavBar() {
           className="hclogo"
         />
       </Link>
-      <Link to="/selecthero">Select Hero</Link>
+      <div className="rule">
+        <p>?</p>
+      </div>
     </nav>
   );
 }

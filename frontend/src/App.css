@@ -32,7 +32,21 @@ body {
   background-position: center;
   color: black;
 }
-
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rule {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: red;
+  margin: 00.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .start {
   max-width: 250px;
   display: block;
@@ -103,7 +117,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 .heroSelect {
   display: flex;
