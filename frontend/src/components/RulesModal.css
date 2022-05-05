@@ -1,0 +1,48 @@
+.boxrules {
+  margin: 25px;
+  width: 300px;
+  height: fit-content;
+  background: #fff;
+  border: solid black;
+  border-color: black;
+  float: left;
+  padding: 1.5rem;
+}
+.boxrules ul {
+  padding-top: 0.5rem;
+}
+.boxrules li {
+  padding-top: 1rem;
+}
+.boxrules h2 {
+  font-size: 18pt;
+  font-family: "Bangers";
+}
+.box2rules {
+  width: fit-content;
+  border-width: 3px 3px 5px 5px;
+  border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+  transform: rotate(-2deg);
+}
+
+.evenboxinnerules {
+  transform: rotate(2deg);
+  margin: 15px;
+  padding: 0 5px;
+  float: right;
+  background: #ddd;
+  border: 1px solid #222;
+  box-shadow: 3px 3px 0 #222;
+}
+
+@media screen and (orientation: landscape) {
+  .boxrules {
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 16pt;
+  }
+  .boxrules h2 {
+    font-weight: 600;
+    font-size: 24pt;
+  }
+}
