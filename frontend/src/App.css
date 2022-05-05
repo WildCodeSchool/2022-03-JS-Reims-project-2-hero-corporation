@@ -182,9 +182,9 @@ main {
 .progressgame:after {
   content: attr(data-label);
   position: absolute;
-
   top: 0.35rem;
-  left: 28.5vw;
+  left: 26.5vw;
+  font-family: "Bangers";
 }
 progress {
   height: 1.75rem;
@@ -223,6 +223,9 @@ progress {
   }
   .hero-corporation-logo {
     height: 35vh;
+  }
+  .progressgame:after {
+    left: 29vw;
   }
 }
 /* Fin du responsive */
