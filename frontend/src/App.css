@@ -143,11 +143,13 @@ main {
   flex-direction: column-reverse;
   align-items: center;
   width: max-content;
+  margin-bottom: 1rem;
 }
 .timerprogress p {
   font-weight: 600;
   font-family: "Bangers";
   font-size: 18pt;
+  margin-top: 0.5rem;
 }
 
 #bosslife {
@@ -178,12 +180,24 @@ main {
 }
 .progressgame {
   position: relative;
+  margin-bottom: 0.5rem;
 }
 .progressgame:after {
   content: attr(data-label);
   position: absolute;
   top: 0.35rem;
   left: 26.5vw;
+  font-family: "Bangers";
+}
+.progressbosslife {
+  position: relative;
+  margin: 1rem;
+}
+.progressbosslife:after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0.35rem;
+  left: 10vw;
   font-family: "Bangers";
 }
 progress {
@@ -197,6 +211,12 @@ progress {
 }
 .progress-bar {
   width: 60vw;
+}
+.bossfight {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 }
 /* Début du responsive */
 @media screen and (orientation: landscape) {
@@ -214,6 +234,7 @@ progress {
     flex-direction: row-reverse;
     margin-top: 4rem;
   }
+
   .fightimg {
     max-width: 200px;
     display: block;
@@ -226,6 +247,14 @@ progress {
   }
   .progressgame:after {
     left: 29vw;
+  }
+  .progressbosslife:after {
+    left: 2vw;
+    top: 0.55rem;
+    font-size: 18pt;
+  }
+  .progressbosslife progress {
+    height: 2.5rem;
   }
 }
 /* Fin du responsive */
