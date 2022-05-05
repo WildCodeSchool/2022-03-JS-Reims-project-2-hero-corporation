@@ -44,6 +44,7 @@ nav {
 }
 
 .rule {
+  font-family: "Bangers";
   width: 20px;
   height: 20px;
   border-radius: 10px;
@@ -137,13 +138,21 @@ main {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
-.progressgame {
+.timerprogress {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
+  width: max-content;
 }
+.timerprogress p {
+  font-weight: 600;
+  font-family: "Bangers";
+  font-size: 18pt;
+}
+
 #bosslife {
-  margin-bottom: 00.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 .hero-corporation-logo {
   max-width: 100vw;
@@ -156,11 +165,39 @@ main {
   margin: 1rem;
 }
 .bosslife {
+  font-family: "Bangers";
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.chactersfight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progressgame {
+  position: relative;
+}
+.progressgame:after {
+  content: attr(data-label);
+  position: absolute;
 
+  top: 0.35rem;
+  left: 28.5vw;
+}
+progress {
+  height: 1.75rem;
+  border-radius: 20px;
+}
+::-moz-progress-bar,
+::-webkit-progress-value,
+::-webkit-progress-bar {
+  border-radius: 20px;
+}
+.progress-bar {
+  width: 60vw;
+}
 /* Début du responsive */
 @media screen and (orientation: landscape) {
   body {
@@ -171,10 +208,12 @@ main {
   }
 
   main {
-    flex-direction: row-reverse;
-    margin-top: 8rem;
+    flex-direction: column;
   }
-
+  .chactersfight {
+    flex-direction: row-reverse;
+    margin-top: 4rem;
+  }
   .fightimg {
     max-width: 200px;
     display: block;
