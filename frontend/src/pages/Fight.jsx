@@ -133,14 +133,15 @@ function Fight({ hero, bossesList }) {
         </div>
       </div>
       <div className="chactersfight">
-        <div className="bosslife">
-          <h2>
-            Boss Life {bossLife}/{maxBossLife}
-          </h2>
-          <progress id="bosslife" max={maxBossLife} value={bossLife}>
-            bossLife
-          </progress>
-
+        <div className="bossfight">
+          <div
+            className="progressbosslife"
+            data-label={` ${bossLife} / ${maxBossLife}`}
+          >
+            <progress className="bosslife" max={maxBossLife} value={bossLife}>
+              bossLife
+            </progress>
+          </div>
           <Jump spy={currentBoss} timeout={1000}>
             <Flash when={criticalHit % 3 === 0}>
               <Character character={currentBoss} className="fight-boss" />
