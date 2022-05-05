@@ -40,6 +40,8 @@ function Fight({ hero, bossesList }) {
     hero.powerstats.strength +
     hero.powerstats.speed +
     hero.powerstats.power;
+  const bossNumber = bossesList.indexOf(currentBoss) + 1;
+  const bossCount = bossesList.length;
 
   useEffect(() => {
     setBossLife(maxBossLife);
@@ -112,9 +114,6 @@ function Fight({ hero, bossesList }) {
   const second = () => {
     return time % 60 < 10 ? `0${time % 60}` : time % 60;
   };
-
-  const bossNumber = bossesList.indexOf(currentBoss) + 1;
-  const bossCount = bossesList.length;
 
   return (
     <>
