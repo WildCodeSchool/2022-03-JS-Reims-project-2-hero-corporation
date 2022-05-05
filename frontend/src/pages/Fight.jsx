@@ -5,18 +5,19 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useModal } from "react-hooks-use-modal";
 import Jump from "react-reveal/Jump";
+import Flash from "react-reveal/Flash";
 import Character from "../components/Character";
 import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
-  const [trigger, setTrigger] = useState(true);
   const [bossLife, setBossLife] = useState(null);
   const [heroLife, setHeroLife] = useState(null);
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
+  const [criticalHit, setCriticalHit] = useState(0);
   const [Modal, open] = useModal("root", {
     preventScroll: true,
     closeOnOverlayClick: false,
@@ -75,6 +76,9 @@ function Fight({ hero, bossesList }) {
       if (weapon === bossWeakness) {
         damage = Math.floor(1.8 * damage);
       }
+      if (damage === 10) {
+        setCriticalHit(criticalHit + 1);
+      }
 
       setHeroLife((previousState) => Math.max(previousState - 1, 0));
       setBossLife((previousState) => Math.max(previousState - damage, 0));
@@ -87,7 +91,6 @@ function Fight({ hero, bossesList }) {
     if (bossLife === 0) {
       if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
         setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
-        setTrigger(!trigger);
       } else {
         navigate("/endgame");
       }
@@ -132,8 +135,10 @@ function Fight({ hero, bossesList }) {
           bossLife
         </progress>
 
-        <Jump spy={trigger}>
-          <Character character={currentBoss} className="fight-boss" />
+        <Jump spy={currentBoss} timeout={1000}>
+          <Flash when={criticalHit % 3 === 0}>
+            <Character character={currentBoss} className="fight-boss" />
+          </Flash>
         </Jump>
       </div>
       <img
