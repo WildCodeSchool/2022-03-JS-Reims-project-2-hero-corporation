@@ -127,10 +127,15 @@ nav {
 }
 
 main {
+  flex-grow: 1;
+  display: flex;
+}
+.pagefight {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
 }
 .heroSelect {
   display: flex;
