@@ -60,8 +60,8 @@
   line-height: 1.25;
 }
 .hclogo {
-  max-width: 5vh;
-  margin: 0.75rem;
+  max-width: 10vh;
+  margin-left: 1rem;
 }
 
 .hero-corporation-logo {
@@ -71,4 +71,13 @@
 
 .play {
   width: 30vw;
+}
+
+@media screen and (orientation: landscape) {
+  .banner-presentation,
+  .banner-teaser {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: x-large;
+  }
 }
