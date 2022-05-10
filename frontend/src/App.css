@@ -214,7 +214,10 @@ main {
 }
 .progressbosslife {
   position: relative;
-  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
 }
 .progressbosslife:after {
   content: attr(data-label);
@@ -239,9 +242,19 @@ progress {
 }
 .bossfight {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.timer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.selectheropage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 /* Début du responsive */
 @media screen and (orientation: landscape) {
