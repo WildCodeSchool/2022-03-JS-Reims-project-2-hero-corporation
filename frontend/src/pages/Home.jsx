@@ -4,7 +4,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <>
+    <div className="main-homepage">
       <div className="banner">
         <div className="banner-presentation">Ready for a new adventure ?</div>
         <div className="edition-number-container">
@@ -32,7 +32,7 @@ function Home() {
           FT. Aquaman, Odin, Goku and many others ...
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

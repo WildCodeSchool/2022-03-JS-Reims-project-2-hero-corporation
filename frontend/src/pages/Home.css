@@ -1,3 +1,9 @@
+.main-homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .banner {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -84,12 +90,6 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
-.banner,
-.hero-corporation-logo,
-.play {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
 
 @media screen and (orientation: landscape) {
   .banner-presentation,
@@ -100,12 +100,7 @@ nav {
   }
   .hero-corporation-logo {
     max-width: 50vw;
-  }
-  .banner,
-  .play,
-  .hero-corporation-logo {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: auto;
   }
   .play {
     max-width: 25vw;
