@@ -109,14 +109,17 @@ main {
 .previoushero {
   margin: 0.5rem;
   font-size: 5rem;
-  color: orange;
+  font-weight: bold;
+  color: var(--yellow);
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
+
 .nexthero {
   margin: 0.5rem;
   font-size: 5rem;
-  color: orange;
+  font-weight: bold;
+  color: var(--yellow);
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
