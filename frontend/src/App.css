@@ -61,6 +61,12 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
+.play {
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
 .vs-element {
   margin-left: 5rem;
   margin-right: 5rem;
@@ -88,26 +94,9 @@ nav {
   margin: 1rem;
   width: 300px;
 }
-.buttons button {
-  background-color: black;
-}
 .buttons:focus {
   outline: none;
 }
-/* gestion des hovers sur les boutons */
-.intelligence:hover {
-  color: var(--light-blue);
-}
-.strength:hover {
-  color: var(--green);
-}
-.speed:hover {
-  color: var(--red);
-}
-.power:hover {
-  color: var(--purple);
-}
-/* fin des hovers bouttons */
 /* Fin boutons d'attaque */
 
 .hclogo {
@@ -127,14 +116,17 @@ main {
 .previoushero {
   margin: 0.5rem;
   font-size: 5rem;
-  color: orange;
+  font-weight: bold;
+  color: var(--yellow);
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
+
 .nexthero {
   margin: 0.5rem;
   font-size: 5rem;
-  color: orange;
+  font-weight: bold;
+  color: var(--yellow);
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
@@ -173,7 +165,9 @@ main {
   flex-direction: column;
   align-items: center;
 }
-.chactersfight {
+
+.endgame {
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,6 +212,7 @@ progress {
   justify-content: center;
   align-items: center;
 }
+
 /* Début du responsive */
 @media screen and (orientation: landscape) {
   body {
@@ -255,6 +250,15 @@ progress {
   }
   .progressbosslife progress {
     height: 2.5rem;
+  }
+  .play {
+    width: 50vw;
+  }
+  .congratulation {
+    max-width: 50vw;
+  }
+  .playagain {
+    max-width: 50vw;
   }
 }
 /* Fin du responsive */

@@ -11,9 +11,9 @@ function Home() {
       />
       <Link to="/selecthero">
         <img
-          src="/src/assets/images/start.png"
-          alt="start img"
-          className="start"
+          src="/src/assets/images/HeroCorporation-end-elements-23.png"
+          alt="play img"
+          className="play"
         />
       </Link>
     </div>
