@@ -25,10 +25,9 @@
 }
 html {
   line-height: 1;
-  overflow: hidden;
 }
 
-body {
+:root {
   min-height: 100vh;
   background-image: url("./assets/images/background-hc-mobile.png");
   background-size: cover;
@@ -127,13 +126,23 @@ main {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
-.progressgame {
+.timerprogress {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
+  width: max-content;
+  margin-bottom: 1rem;
 }
+.timerprogress p {
+  font-weight: 600;
+  font-family: "Bangers";
+  font-size: 18pt;
+  margin-top: 0.5rem;
+}
+
 #bosslife {
-  margin-bottom: 00.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 .hero-corporation-logo {
   max-width: 100vw;
@@ -146,20 +155,71 @@ main {
   margin: 1rem;
 }
 .bosslife {
+  font-family: "Bangers";
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+.chactersfight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progressgame {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.progressgame:after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0.35rem;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-family: "Bangers";
+}
+
 .endgame {
   max-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+.progressbosslife {
+  position: relative;
+  margin: 1rem;
+}
+.progressbosslife:after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Bangers";
+}
+progress {
+  height: 1.75rem;
+  border-radius: 20px;
+}
+::-moz-progress-bar,
+::-webkit-progress-value,
+::-webkit-progress-bar {
+  border-radius: 20px;
+}
+.progress-bar {
+  width: 60vw;
+}
+.bossfight {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
 /* Début du responsive */
 @media screen and (orientation: landscape) {
-  body {
+  :root {
     background-image: url("./assets/images/background-hc-desktop.png");
     background-position: center;
     background-size: cover;
@@ -167,8 +227,11 @@ main {
   }
 
   main {
+    flex-direction: column;
+  }
+  .chactersfight {
     flex-direction: row-reverse;
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 
   .fightimg {
@@ -180,6 +243,14 @@ main {
   }
   .hero-corporation-logo {
     height: 35vh;
+  }
+
+  .progressbosslife:after {
+    top: 0.55rem;
+    font-size: 18pt;
+  }
+  .progressbosslife progress {
+    height: 2.5rem;
   }
   .play {
     width: 50vw;
