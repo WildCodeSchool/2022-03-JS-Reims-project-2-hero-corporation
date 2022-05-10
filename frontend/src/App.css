@@ -87,26 +87,9 @@ nav {
   margin: 1rem;
   width: 300px;
 }
-.buttons button {
-  background-color: black;
-}
 .buttons:focus {
   outline: none;
 }
-/* gestion des hovers sur les boutons */
-.intelligence:hover {
-  color: var(--light-blue);
-}
-.strength:hover {
-  color: var(--green);
-}
-.speed:hover {
-  color: var(--red);
-}
-.power:hover {
-  color: var(--purple);
-}
-/* fin des hovers bouttons */
 /* Fin boutons d'attaque */
 
 .hclogo {
@@ -188,8 +171,14 @@ main {
   right: 0;
   left: 0;
   text-align: center;
-
   font-family: "Bangers";
+}
+
+.endgame {
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .progressbosslife {
   position: relative;
@@ -256,6 +245,12 @@ progress {
   }
   .progressbosslife progress {
     height: 2.5rem;
+  }
+  .congratulation {
+    max-width: 50vw;
+  }
+  .playagain {
+    max-width: 50vw;
   }
 }
 /* Fin du responsive */

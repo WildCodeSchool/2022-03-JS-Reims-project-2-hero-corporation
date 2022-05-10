@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import { useTimer } from "use-timer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,6 +7,7 @@ import { useModal } from "react-hooks-use-modal";
 import Jump from "react-reveal/Jump";
 import Flash from "react-reveal/Flash";
 import Character from "../components/Character";
+import CharacterType from "../components/CharacterType";
 import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -132,6 +133,7 @@ function Fight({ hero, bossesList }) {
           />
         </div>
       </div>
+
       <div className="chactersfight">
         <div className="bossfight">
           <div
@@ -148,6 +150,7 @@ function Fight({ hero, bossesList }) {
             </Flash>
           </Jump>
         </div>
+
         <img
           src="./src/assets/images/versus-element.png"
           className="vs-element"
@@ -161,41 +164,37 @@ function Fight({ hero, bossesList }) {
               onClick={() => {
                 useWeapon("intelligence");
               }}
-              className="intelligence"
+              className="intelligence bg-blue-500 min-h-[2rem]"
               type="button"
             >
               <h2>{heroStats.intelligence}</h2>
-              <h2>{hero.powerstats.intelligence}</h2>
             </button>
             <button
               onClick={() => {
                 useWeapon("strength");
               }}
-              className="strength"
+              className="strength bg-green-500 min-h-[2rem]"
               type="button"
             >
               <h2>{heroStats.strength}</h2>
-              <h2>{hero.powerstats.strength}</h2>
             </button>
             <button
               onClick={() => {
                 useWeapon("speed");
               }}
-              className="speed"
+              className="speed bg-red-500 min-h-[2rem]"
               type="button"
             >
               <h2>{heroStats.speed}</h2>
-              <h2>{hero.powerstats.speed}</h2>
             </button>
             <button
               onClick={() => {
                 useWeapon("power");
               }}
-              className="power"
+              className="power bg-purple-500 min-h-[2rem]"
               type="button"
             >
               <h2>{heroStats.power}</h2>
-              <h2>{hero.powerstats.power}</h2>
             </button>
           </div>
         </div>
@@ -207,8 +206,8 @@ function Fight({ hero, bossesList }) {
   );
 }
 Fight.propTypes = {
-  hero: Character.propTypes.character.isRequired,
-  bossesList: propTypes.arrayOf(Character.propTypes.character).isRequired,
+  hero: CharacterType.isRequired,
+  bossesList: PropTypes.arrayOf(CharacterType).isRequired,
 };
 
 export default Fight;
