@@ -162,19 +162,14 @@ main {
   flex-direction: column-reverse;
   align-items: center;
   width: max-content;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .timerprogress p {
   font-weight: 600;
   font-family: "Bangers";
   font-size: 18pt;
-  margin-top: 0.5rem;
 }
 
-#bosslife {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
 .hero-corporation-logo {
   max-width: 100vw;
   height: auto;
@@ -183,19 +178,19 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
 }
 .bosslife {
   font-family: "Bangers";
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 .chactersfight {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 5rem;
 }
 .progressgame {
   position: relative;
