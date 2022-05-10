@@ -224,7 +224,7 @@ progress {
 }
 /* Début du responsive */
 @media screen and (orientation: landscape) {
-  body {
+  :root {
     background-image: url("./assets/images/background-hc-desktop.png");
     background-position: center;
     background-size: cover;
@@ -249,11 +249,8 @@ progress {
   .hero-corporation-logo {
     height: 35vh;
   }
-  .progressgame:after {
-    left: 29vw;
-  }
+
   .progressbosslife:after {
-    left: 2vw;
     top: 0.55rem;
     font-size: 18pt;
   }
