@@ -268,9 +268,13 @@ progress {
   main {
     flex-direction: column;
   }
-  .chactersfight {
+  .fight {
     flex-direction: row-reverse;
     margin-top: 4rem;
+  }
+  .vs-element {
+    align-self: flex-start;
+    margin-top: 5rem;
   }
 
   .fightimg {
@@ -290,6 +294,7 @@ progress {
   }
   .progressbosslife progress {
     height: 2.5rem;
+    margin-left: 1.5rem;
   }
   .play {
     width: 50vw;
@@ -299,6 +304,21 @@ progress {
   }
   .playagain {
     max-width: 50vw;
+  }
+  .bossfight {
+    flex-direction: row-reverse;
+  }
+  .boss-life {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 5rem;
+  }
+  .timerprogress p {
+    font-size: 5rem;
+  }
+  .progressgame {
+    margin-top: 3rem;
   }
 }
 /* Fin du responsive */
