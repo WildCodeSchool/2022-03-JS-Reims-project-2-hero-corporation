@@ -59,3 +59,16 @@
   padding: 0.5rem;
   line-height: 1.25;
 }
+.hclogo {
+  max-width: 5vh;
+  margin: 0.75rem;
+}
+
+.hero-corporation-logo {
+  max-width: 50vw;
+  height: auto;
+}
+
+.play {
+  width: 30vw;
+}

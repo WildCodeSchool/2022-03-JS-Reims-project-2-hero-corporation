@@ -116,11 +116,6 @@ nav {
 }
 /* Fin boutons d'attaque */
 
-.hclogo {
-  max-width: 5vh;
-  margin: 0.75rem;
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -165,10 +160,7 @@ main {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
-.hero-corporation-logo {
-  max-width: 100vw;
-  height: auto;
-}
+
 .heroAttack {
   display: flex;
   flex-direction: column;
@@ -262,9 +254,6 @@ progress {
     margin-right: auto;
     margin: 1rem;
   }
-  .hero-corporation-logo {
-    height: 35vh;
-  }
 
   .progressbosslife:after {
     top: 0.55rem;
@@ -272,9 +261,6 @@ progress {
   }
   .progressbosslife progress {
     height: 2.5rem;
-  }
-  .play {
-    width: 50vw;
   }
   .congratulation {
     max-width: 50vw;
