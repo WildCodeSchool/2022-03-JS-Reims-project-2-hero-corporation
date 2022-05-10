@@ -18,6 +18,12 @@ function Fight({ hero, bossesList }) {
   const [bossWeakness, setBossWeakness] = useState();
   const [currentBoss, setCurrentBoss] = useState(bossesList[0]);
   const [heroStats, setHeroStats] = useState(hero.powerstats);
+  const [previousDamage, setPreviousDamage] = useState({
+    intelligence: 0,
+    strength: 0,
+    speed: 0,
+    power: 0,
+  });
   const [criticalHit, setCriticalHit] = useState(0);
   const [Modal, open] = useModal("root", {
     preventScroll: true,
@@ -80,9 +86,9 @@ function Fight({ hero, bossesList }) {
       if (damage === 10) {
         setCriticalHit(criticalHit + 1);
       }
-
       setHeroLife((previousState) => Math.max(previousState - 1, 0));
       setBossLife((previousState) => Math.max(previousState - damage, 0));
+      setPreviousDamage({ ...previousDamage, [weapon]: damage });
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
     } else toast(`Not enouth ${[weapon]}`);
