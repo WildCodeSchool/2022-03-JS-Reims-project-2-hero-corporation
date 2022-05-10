@@ -31,6 +31,7 @@ html {
 body {
   flex-grow: 1;
 }
+
 :root {
   min-height: 100vh;
   background-image: url("./assets/images/background-hc-mobile.png");
@@ -39,6 +40,7 @@ body {
   color: black;
   background-repeat: no-repeat;
 }
+
 #root {
   height: 100%;
 }
@@ -56,6 +58,7 @@ nav {
 .rule {
   max-width: 90px;
 }
+
 .start {
   max-width: 250px;
   display: block;
@@ -63,12 +66,7 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
-.play {
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-}
+
 .vs-element {
   margin-top: 0.5rem;
   max-width: 100px;
@@ -121,11 +119,6 @@ nav {
 }
 /* Fin boutons d'attaque */
 
-.hclogo {
-  max-width: 5vh;
-  margin: 0.75rem;
-}
-
 main {
   flex-grow: 1;
   display: flex;
@@ -174,6 +167,11 @@ main {
   max-width: 100vw;
   height: auto;
 }
+#bosslife {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .heroAttack {
   display: flex;
   flex-direction: column;
@@ -284,9 +282,6 @@ progress {
     margin-right: auto;
     margin: 1rem;
   }
-  .hero-corporation-logo {
-    height: 35vh;
-  }
 
   .progressbosslife:after {
     top: 0.55rem;
@@ -295,9 +290,6 @@ progress {
   .progressbosslife progress {
     height: 2.5rem;
     margin-left: 1.5rem;
-  }
-  .play {
-    width: 50vw;
   }
   .congratulation {
     max-width: 50vw;
