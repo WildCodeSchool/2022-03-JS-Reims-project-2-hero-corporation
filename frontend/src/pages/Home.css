@@ -26,7 +26,7 @@
   grid-row-start: 1;
   grid-column-start: 4;
   grid-row-end: 4;
-  place-self: center stretch;
+  place-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,8 +69,8 @@ nav {
 }
 
 .button-rules {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   margin-right: 1rem;
   display: flex;
   align-items: center;
@@ -78,21 +78,18 @@ nav {
 }
 
 .hclogo {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   margin-left: 1rem;
 }
 
 .hero-corporation-logo {
-  max-width: 50vw;
+  max-width: 100vw;
   height: auto;
 }
 
 .play {
-  width: 30vw;
-}
-.play {
-  max-width: 90vw;
+  max-width: 60vw;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
@@ -104,5 +101,8 @@ nav {
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: x-large;
+  }
+  .hero-corporation-logo {
+    background-image: "/src/assets/images/hero-corporation-logo-desktop.png";
   }
 }
