@@ -24,9 +24,13 @@
   src: url(/src/assets/font/Antic-Regular.ttf);
 }
 html {
+  display: flex;
   line-height: 1;
 }
 
+body {
+  flex-grow: 1;
+}
 :root {
   min-height: 100vh;
   background-image: url("./assets/images/background-hc-mobile.png");
