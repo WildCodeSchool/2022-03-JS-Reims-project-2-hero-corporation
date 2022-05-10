@@ -84,8 +84,6 @@ function Fight({ hero, bossesList }) {
     if (heroStats[weapon] > 0) {
       if (weapon === bossWeakness) {
         damage = Math.floor(1.8 * damage);
-      }
-      if (damage === 10) {
         setCriticalHit(criticalHit + 1);
       }
       setHeroLife((previousState) => Math.max(previousState - 1, 0));
