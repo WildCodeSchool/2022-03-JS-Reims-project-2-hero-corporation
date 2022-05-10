@@ -90,6 +90,27 @@ nav {
 .buttons:focus {
   outline: none;
 }
+
+.explose-element {
+  position: absolute;
+  width: 4rem;
+  top: -2rem;
+  right: -1rem;
+}
+
+.text-explose {
+  position: absolute;
+  width: 4rem;
+  top: -0.5rem;
+  right: -1rem;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.text-hero-shadow {
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
 /* Fin boutons d'attaque */
 
 .hclogo {

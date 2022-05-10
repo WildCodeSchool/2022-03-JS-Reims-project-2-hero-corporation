@@ -33,7 +33,7 @@ function Fight({ hero, bossesList }) {
     initialTime: 300,
     timerType: "DECREMENTAL",
     endTime: 0,
-    autostart: true,
+    autostart: false,
     onTimeOver: () => open(),
   });
   const maxBossLife =
@@ -161,43 +161,69 @@ function Fight({ hero, bossesList }) {
             onClick={() => {
               useWeapon("intelligence");
             }}
-            className="intelligence bg-blue-500 min-h-[2rem]"
+            className="intelligence bg-blue-500 min-h-[3rem] max-h-[3rem] relative"
             type="button"
           >
-            <h2>{heroStats.intelligence}</h2>
-            <h2 className="text-gray-300">
-              Prev. Damage: {previousDamage.intelligence}
+            <img
+              src="./src/assets/images/explose-element.png"
+              alt="explose"
+              className="explose-element"
+            />
+            <h2 className="text-hero-shadow">🧠 {heroStats.intelligence}</h2>
+            <h2 className="text-yellow-500 text-explose">
+              {previousDamage.intelligence}
             </h2>
           </button>
           <button
             onClick={() => {
               useWeapon("strength");
             }}
-            className="strength bg-green-500 min-h-[2rem]"
+            className="strength bg-green-500 min-h-[3rem] max-h-[3rem] relative"
             type="button"
           >
-            <h2>{heroStats.strength}</h2>
-            <h2>Prev. Damage: {previousDamage.strength}</h2>
+            <img
+              src="./src/assets/images/explose-element.png"
+              alt="explose"
+              className="explose-element"
+            />
+            <h2 className="text-hero-shadow">💪 {heroStats.strength}</h2>
+            <h2 className="text-yellow-500 text-explose">
+              {previousDamage.strength}
+            </h2>
           </button>
           <button
             onClick={() => {
               useWeapon("speed");
             }}
-            className="speed bg-red-500 min-h-[2rem]"
+            className="speed bg-red-500 min-h-[3rem] max-h-[3rem] relative"
             type="button"
           >
-            <h2>{heroStats.speed}</h2>
-            <h2>Prev. Damage: {previousDamage.speed}</h2>
+            <img
+              src="./src/assets/images/explose-element.png"
+              alt="explose"
+              className="explose-element"
+            />
+            <h2 className="text-hero-shadow">⚡ {heroStats.speed}</h2>
+            <h2 className="text-yellow-500 text-explose">
+              {previousDamage.speed}
+            </h2>
           </button>
           <button
             onClick={() => {
               useWeapon("power");
             }}
-            className="power bg-purple-500 min-h-[2rem]"
+            className="power bg-purple-500 min-h-[3rem] max-h-[3rem] relative"
             type="button"
           >
-            <h2>{heroStats.power}</h2>
-            <h2>Prev. Damage: {previousDamage.power}</h2>
+            <img
+              src="./src/assets/images/explose-element.png"
+              alt="explose"
+              className="explose-element"
+            />
+            <h2 className="text-hero-shadow">✨ {heroStats.power}</h2>
+            <h2 className="text-yellow-500 text-explose">
+              {previousDamage.power}
+            </h2>
           </button>
         </div>
       </div>
