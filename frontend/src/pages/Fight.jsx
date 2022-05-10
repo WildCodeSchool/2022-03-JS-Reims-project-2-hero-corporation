@@ -121,11 +121,13 @@ function Fight({ hero, bossesList }) {
   };
 
   return (
-    <>
-      <div className="timerprogress">
-        <p>
-          {minute()}:{second()}
-        </p>
+    <div className="pagefight">
+      <div className="timer">
+        <div className="timerprogress">
+          <p>
+            {minute()}:{second()}
+          </p>
+        </div>
         <div
           className="progressgame"
           data-label={`${bossNumber} / ${bossCount}`}
@@ -137,104 +139,102 @@ function Fight({ hero, bossesList }) {
           />
         </div>
       </div>
-      <Jump spy={currentBoss} timeout={1000}>
-        <Flash when={criticalHit % 3 === 0}>
-          <Character character={currentBoss} className="fight-boss" />
-        </Flash>
-      </Jump>
-
-      <img
-        src="./src/assets/images/versus-element.png"
-        className="vs-element"
-        alt="versus"
-      />
-      <div className="heroAttack">
-        <Character character={hero} className="fight-hero" />
-        <ToastContainer />
-        <div className="buttons">
-          <button
-            onClick={() => {
-              useWeapon("intelligence");
-            }}
-            className="intelligence bg-blue-500 min-h-[3rem] max-h-[3rem] relative"
-            type="button"
-          >
-            <img
-              src="./src/assets/images/explose-element.png"
-              alt="explose"
-              className="explose-element"
-            />
-            <h2 className="text-hero-shadow">🧠 {heroStats.intelligence}</h2>
-            <h2 className="text-yellow-500 text-explose">
-              {previousDamage.intelligence}
-            </h2>
-          </button>
-          <button
-            onClick={() => {
-              useWeapon("strength");
-            }}
-            className="strength bg-green-500 min-h-[3rem] max-h-[3rem] relative"
-            type="button"
-          >
-            <img
-              src="./src/assets/images/explose-element.png"
-              alt="explose"
-              className="explose-element"
-            />
-            <h2 className="text-hero-shadow">💪 {heroStats.strength}</h2>
-            <h2 className="text-yellow-500 text-explose">
-              {previousDamage.strength}
-            </h2>
-          </button>
-          <button
-            onClick={() => {
-              useWeapon("speed");
-            }}
-            className="speed bg-red-500 min-h-[3rem] max-h-[3rem] relative"
-            type="button"
-          >
-            <img
-              src="./src/assets/images/explose-element.png"
-              alt="explose"
-              className="explose-element"
-            />
-            <h2 className="text-hero-shadow">⚡ {heroStats.speed}</h2>
-            <h2 className="text-yellow-500 text-explose">
-              {previousDamage.speed}
-            </h2>
-          </button>
-          <button
-            onClick={() => {
-              useWeapon("power");
-            }}
-            className="power bg-purple-500 min-h-[3rem] max-h-[3rem] relative"
-            type="button"
-          >
-            <img
-              src="./src/assets/images/explose-element.png"
-              alt="explose"
-              className="explose-element"
-            />
-            <h2 className="text-hero-shadow">✨ {heroStats.power}</h2>
-            <h2 className="text-yellow-500 text-explose">
-              {previousDamage.power}
-            </h2>
-          </button>
-
-          <div className="chactersfight">
-            <div className="bossfight">
-              <div
-                className="progressbosslife"
-                data-label={` ${bossLife} / ${maxBossLife}`}
+      <div className="chactersfight">
+        <div className="bossfight">
+          <div className="boss-life">
+            <Jump spy={currentBoss} timeout={1000}>
+              <Flash when={criticalHit % 3 === 0}>
+                <Character character={currentBoss} className="fight-boss" />
+              </Flash>
+            </Jump>
+            <div
+              className="progressbosslife"
+              data-label={` ${bossLife} / ${maxBossLife}`}
+            >
+              <progress className="bosslife" max={maxBossLife} value={bossLife}>
+                bossLife
+              </progress>
+            </div>
+          </div>
+          <img
+            src="./src/assets/images/versus-element.png"
+            className="vs-element"
+            alt="versus"
+          />
+          <div className="heroAttack">
+            <Character character={hero} className="fight-hero" />
+            <ToastContainer />
+            <div className="buttons">
+              <button
+                onClick={() => {
+                  useWeapon("intelligence");
+                }}
+                className="intelligence bg-blue-500 min-h-[3rem] max-h-[3rem] relative"
+                type="button"
               >
-                <progress
-                  className="bosslife"
-                  max={maxBossLife}
-                  value={bossLife}
-                >
-                  bossLife
-                </progress>
-              </div>
+                <img
+                  src="./src/assets/images/explose-element.png"
+                  alt="explose"
+                  className="explose-element"
+                />
+                <h2 className="text-hero-shadow">
+                  🧠 {heroStats.intelligence}
+                </h2>
+                <h2 className="text-yellow-500 text-explose">
+                  {previousDamage.intelligence}
+                </h2>
+              </button>
+              <button
+                onClick={() => {
+                  useWeapon("strength");
+                }}
+                className="strength bg-green-500 min-h-[3rem] max-h-[3rem] relative"
+                type="button"
+              >
+                <img
+                  src="./src/assets/images/explose-element.png"
+                  alt="explose"
+                  className="explose-element"
+                />
+                <h2 className="text-hero-shadow">💪 {heroStats.strength}</h2>
+                <h2 className="text-yellow-500 text-explose">
+                  {previousDamage.strength}
+                </h2>
+              </button>
+              <button
+                onClick={() => {
+                  useWeapon("speed");
+                }}
+                className="speed bg-red-500 min-h-[3rem] max-h-[3rem] relative"
+                type="button"
+              >
+                <img
+                  src="./src/assets/images/explose-element.png"
+                  alt="explose"
+                  className="explose-element"
+                />
+                <h2 className="text-hero-shadow">⚡ {heroStats.speed}</h2>
+                <h2 className="text-yellow-500 text-explose">
+                  {previousDamage.speed}
+                </h2>
+              </button>
+              <button
+                onClick={() => {
+                  useWeapon("power");
+                }}
+                className="power bg-purple-500 min-h-[3rem] max-h-[3rem] relative"
+                type="button"
+              >
+                <img
+                  src="./src/assets/images/explose-element.png"
+                  alt="explose"
+                  className="explose-element"
+                />
+                <h2 className="text-hero-shadow">✨ {heroStats.power}</h2>
+                <h2 className="text-yellow-500 text-explose">
+                  {previousDamage.power}
+                </h2>
+              </button>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ function Fight({ hero, bossesList }) {
       <Modal>
         <HeroLossModal />
       </Modal>
-    </>
+    </div>
   );
 }
 Fight.propTypes = {
