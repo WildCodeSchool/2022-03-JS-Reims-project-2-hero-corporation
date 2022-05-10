@@ -108,33 +108,26 @@
     -1px -1px 0 #000;
   letter-spacing: 0.5px;
 }
+.intelligence-stats, .strength-stats, .speed-stats, .power-stats {
+  border: 3px solid black;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
 
-.hero-stats .intelligence-stats {
+.intelligence-stats {
   background-color: blue;
-  border: var(--border);
-  padding: 0.4rem;
-  margin-bottom: 0.4rem;
 }
 
-.hero-stats .strength-stats {
+.strength-stats {
   background-color: var(--green);
-  border: var(--border);
-  padding: 0.4rem;
-  margin-bottom: 0.4rem;
 }
 
-.hero-stats .speed-stats {
+.speed-stats {
   background-color: var(--red);
-  border: var(--border);
-  padding: 0.4rem;
-  margin-bottom: 0.4rem;
 }
 
-.hero-stats .power-stats {
+.power-stats {
   background-color: var(--purple);
-  border: var(--border);
-  padding: 0.4rem;
-  margin-bottom: 0.4rem;
 }
 
 .boss-container .hero-stats {
