@@ -60,6 +60,12 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
+.play {
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
 .vs-element {
   margin-left: 5rem;
   margin-right: 5rem;
@@ -167,6 +173,9 @@ main {
   }
   .hero-corporation-logo {
     height: 35vh;
+  }
+  .play {
+    width: 50vw;
   }
 }
 /* Fin du responsive */
