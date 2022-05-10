@@ -102,7 +102,34 @@
   top: 60px;
   font-size: 12px;
   left: -3px;
+  font-family: "Bangers";
+  color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  letter-spacing: 0.5px;
 }
+.intelligence-stats, .strength-stats, .speed-stats, .power-stats {
+  border: 3px solid black;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.intelligence-stats {
+  background-color: blue;
+}
+
+.strength-stats {
+  background-color: var(--green);
+}
+
+.speed-stats {
+  background-color: var(--red);
+}
+
+.power-stats {
+  background-color: var(--purple);
+}
+
 .boss-container .hero-stats {
   display: none;
 }

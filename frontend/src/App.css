@@ -43,11 +43,8 @@ nav {
 }
 
 .rule {
-  font-family: "Bangers";
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: red;
+  width: 90px;
+  height: 90px;
   margin: 0.5rem;
   display: flex;
   align-items: center;
@@ -56,6 +53,12 @@ nav {
 .start {
   max-width: 250px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+.play {
+  max-width: 90vw;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
@@ -109,14 +112,17 @@ main {
 .previoushero {
   margin: 0.5rem;
   font-size: 5rem;
-  color: orange;
+  font-weight: bold;
+  color: var(--yellow);
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
+
 .nexthero {
   margin: 0.5rem;
   font-size: 5rem;
-  color: orange;
+  font-weight: bold;
+  color: var(--yellow);
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
@@ -245,6 +251,9 @@ progress {
   }
   .progressbosslife progress {
     height: 2.5rem;
+  }
+  .play {
+    width: 50vw;
   }
   .congratulation {
     max-width: 50vw;
