@@ -149,6 +149,12 @@ main {
   flex-direction: column;
   align-items: center;
 }
+.endgame {
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Début du responsive */
 @media screen and (orientation: landscape) {
@@ -176,6 +182,11 @@ main {
   }
   .play {
     width: 50vw;
+  .congratulation {
+    max-width: 50vw;
+  }
+  .playagain {
+    max-width: 50vw;
   }
 }
 /* Fin du responsive */
