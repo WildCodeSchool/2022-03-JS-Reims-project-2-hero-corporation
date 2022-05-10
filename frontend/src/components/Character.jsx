@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import "./Character.css";
 import CharacterType from "./CharacterType";
 
-function Character({ character, details, figcaption, className }) {
+function Character({ character, details, figcaption, className, children }) {
   return (
     <article className={className}>
+      {children}
       <h3 className="hero-name">{character.name}</h3>
       <figure className="hero-image-container">
         <img
@@ -49,6 +50,7 @@ Character.propTypes = {
   details: PropTypes.bool,
   figcaption: PropTypes.bool,
   className: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
 Character.defaultProps = {
   details: false,

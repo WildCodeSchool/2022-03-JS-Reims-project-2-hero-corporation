@@ -108,7 +108,10 @@
     -1px -1px 0 #000;
   letter-spacing: 0.5px;
 }
-.intelligence-stats, .strength-stats, .speed-stats, .power-stats {
+.intelligence-stats,
+.strength-stats,
+.speed-stats,
+.power-stats {
   border: 3px solid black;
   padding: 0.4rem;
   margin-bottom: 0.4rem;
