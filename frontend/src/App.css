@@ -70,9 +70,8 @@ nav {
   padding: 1rem;
 }
 .vs-element {
-  margin-left: 5rem;
-  margin-right: 5rem;
-  max-width: 75px;
+  margin-top: 0.5rem;
+  max-width: 100px;
 }
 
 .fightimg {
