@@ -102,7 +102,24 @@
   top: 60px;
   font-size: 12px;
   left: -3px;
+  font-family: "Bangers";
+  color: white;
 }
+
+.hero-stats .intelligence-stats {
+  background-color: blue;
+  border: var(--border);
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero-stats .strength-stats {
+  background-color: var(--green);
+  border: var(--border);
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
 .boss-container .hero-stats {
   display: none;
 }
