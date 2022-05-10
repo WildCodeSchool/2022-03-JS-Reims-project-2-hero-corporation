@@ -185,7 +185,10 @@ main {
   content: attr(data-label);
   position: absolute;
   top: 0.35rem;
-  left: 26.5vw;
+  right: 0;
+  left: 0;
+  text-align: center;
+
   font-family: "Bangers";
 }
 .progressbosslife {
@@ -196,7 +199,9 @@ main {
   content: attr(data-label);
   position: absolute;
   top: 0.35rem;
-  left: 10vw;
+  left: 0;
+  right: 0;
+  text-align: center;
   font-family: "Bangers";
 }
 progress {
