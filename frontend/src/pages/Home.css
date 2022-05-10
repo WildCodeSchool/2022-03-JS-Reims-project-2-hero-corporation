@@ -1,0 +1,43 @@
+.banner {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  font-family: "Bangers";
+  letter-spacing: 0.05rem;
+  text-align: center;
+  color: white;
+}
+.banner-presentation {
+  grid-row: 2;
+  grid-column: span 4 / -1;
+  background-color: #3b6baa;
+  border: 3px solid black;
+  font-size: large;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  place-self: center stretch;
+}
+
+.edition-number-container {
+  z-index: 2;
+  grid-row-start: 1;
+  grid-column-start: 4;
+  grid-row-end: 4;
+  place-self: center stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 3px solid black;
+  box-shadow: 4px 4px 1px 0px black;
+  width: 90px;
+  height: 90px;
+  color: black;
+  padding: 0.5rem;
+  line-height: 1.25;
+}
+
+.edition-number h2 {
+  font-size: 2rem;
+}
