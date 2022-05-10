@@ -155,41 +155,37 @@ function Fight({ hero, bossesList }) {
             onClick={() => {
               useWeapon("intelligence");
             }}
-            className="intelligence"
+            className="intelligence bg-blue-500 min-h-[2rem]"
             type="button"
           >
             <h2>{heroStats.intelligence}</h2>
-            <h2>{hero.powerstats.intelligence}</h2>
           </button>
           <button
             onClick={() => {
               useWeapon("strength");
             }}
-            className="strength"
+            className="strength bg-green-500 min-h-[2rem]"
             type="button"
           >
             <h2>{heroStats.strength}</h2>
-            <h2>{hero.powerstats.strength}</h2>
           </button>
           <button
             onClick={() => {
               useWeapon("speed");
             }}
-            className="speed"
+            className="speed bg-red-500 min-h-[2rem]"
             type="button"
           >
             <h2>{heroStats.speed}</h2>
-            <h2>{hero.powerstats.speed}</h2>
           </button>
           <button
             onClick={() => {
               useWeapon("power");
             }}
-            className="power"
+            className="power bg-purple-500 min-h-[2rem]"
             type="button"
           >
             <h2>{heroStats.power}</h2>
-            <h2>{hero.powerstats.power}</h2>
           </button>
         </div>
       </div>
