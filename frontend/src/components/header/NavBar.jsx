@@ -18,7 +18,10 @@ function NavBar() {
           />
         </Link>
         <button type="button" className="rule" onClick={open}>
-          ?
+          <img
+            src="/src/assets/images/regle.png"
+            alt="Hero Corporation Logo "
+          />
         </button>
       </nav>
       <Modal>

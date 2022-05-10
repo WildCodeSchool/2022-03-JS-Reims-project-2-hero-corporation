@@ -47,6 +47,8 @@ function Fight({ hero, bossesList }) {
     hero.powerstats.strength +
     hero.powerstats.speed +
     hero.powerstats.power;
+  const bossNumber = bossesList.indexOf(currentBoss) + 1;
+  const bossCount = bossesList.length;
 
   useEffect(() => {
     setBossLife(maxBossLife);
@@ -96,8 +98,8 @@ function Fight({ hero, bossesList }) {
 
   useEffect(() => {
     if (bossLife === 0) {
-      if (bossesList.indexOf(currentBoss) < bossesList.length - 1) {
-        setCurrentBoss(bossesList[bossesList.indexOf(currentBoss) + 1]);
+      if (bossNumber < bossCount) {
+        setCurrentBoss(bossesList[bossNumber]);
       } else {
         navigate("/endgame");
       }
@@ -119,35 +121,30 @@ function Fight({ hero, bossesList }) {
   const second = () => {
     return time % 60 < 10 ? `0${time % 60}` : time % 60;
   };
+
   return (
     <>
-      <p>
-        {minute()}:{second()}
-      </p>
-      <div className="progressgame">
-        <progress
-          id="progressgame"
-          value={bossesList.indexOf(currentBoss) + 1}
-          max={bossesList.length}
-        />
-        <h2>
-          {`${bossesList.indexOf(currentBoss) + 1} / ${bossesList.length}`}
-        </h2>
+      <div className="timerprogress">
+        <p>
+          {minute()}:{second()}
+        </p>
+        <div
+          className="progressgame"
+          data-label={`${bossNumber} / ${bossCount}`}
+        >
+          <progress
+            className="progress-bar"
+            value={bossNumber}
+            max={bossCount}
+          />
+        </div>
       </div>
-      <div className="bosslife">
-        <h2>
-          Boss Life {bossLife}/{maxBossLife}
-        </h2>
-        <progress id="bosslife" max={maxBossLife} value={bossLife}>
-          bossLife
-        </progress>
+      <Jump spy={currentBoss} timeout={1000}>
+        <Flash when={criticalHit % 3 === 0}>
+          <Character character={currentBoss} className="fight-boss" />
+        </Flash>
+      </Jump>
 
-        <Jump spy={currentBoss} timeout={1000}>
-          <Flash when={criticalHit % 3 === 0}>
-            <Character character={currentBoss} className="fight-boss" />
-          </Flash>
-        </Jump>
-      </div>
       <img
         src="./src/assets/images/versus-element.png"
         className="vs-element"
@@ -225,6 +222,23 @@ function Fight({ hero, bossesList }) {
               {previousDamage.power}
             </h2>
           </button>
+
+          <div className="chactersfight">
+            <div className="bossfight">
+              <div
+                className="progressbosslife"
+                data-label={` ${bossLife} / ${maxBossLife}`}
+              >
+                <progress
+                  className="bosslife"
+                  max={maxBossLife}
+                  value={bossLife}
+                >
+                  bossLife
+                </progress>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Modal>
