@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import { useTimer } from "use-timer";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,6 +7,7 @@ import { useModal } from "react-hooks-use-modal";
 import Jump from "react-reveal/Jump";
 import Flash from "react-reveal/Flash";
 import Character from "../components/Character";
+import CharacterType from "../components/CharacterType";
 import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -207,8 +208,8 @@ function Fight({ hero, bossesList }) {
   );
 }
 Fight.propTypes = {
-  hero: Character.propTypes.character.isRequired,
-  bossesList: propTypes.arrayOf(Character.propTypes.character).isRequired,
+  hero: CharacterType.isRequired,
+  bossesList: PropTypes.arrayOf(CharacterType).isRequired,
 };
 
 export default Fight;

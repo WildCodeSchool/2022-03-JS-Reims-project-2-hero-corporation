@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import axios from "axios";
 
 import Home from "./Home";
@@ -12,7 +12,7 @@ const bossesID = [639, 320, 141, 532, 655]; // Stromtrooper, Heat-Wave, Bullseye
 function Road() {
   const [characters, setCharacters] = useState([]);
   const [selectedHero, setSelectedHero] = useState();
-  const [bossesList, setBossesList] = useState();
+  const [bossesList, setBossesList] = useState([]);
 
   const boss = (element) => element.id === 655;
 
@@ -44,12 +44,16 @@ function Road() {
       <Route
         path="/fight"
         element={
-          <Fight
-            boss={characters.find(boss)}
-            hero={selectedHero}
-            bossesList={bossesList}
-            setBossesList={setBossesList}
-          />
+          selectedHero ? (
+            <Fight
+              boss={characters.find(boss)}
+              hero={selectedHero}
+              bossesList={bossesList}
+              setBossesList={setBossesList}
+            />
+          ) : (
+            <Navigate replace to="/" />
+          )
         }
       />
       <Route path="/endgame" element={<Endgame />} />
