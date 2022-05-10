@@ -25,10 +25,9 @@
 }
 html {
   line-height: 1;
-  overflow: hidden;
 }
 
-body {
+:root {
   min-height: 100vh;
   background-image: url("./assets/images/background-hc-mobile.png");
   background-size: cover;
