@@ -122,6 +122,13 @@
   margin-bottom: 0.4rem;
 }
 
+.hero-stats .speed-stats {
+  background-color: var(--red);
+  border: var(--border);
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
 .boss-container .hero-stats {
   display: none;
 }
