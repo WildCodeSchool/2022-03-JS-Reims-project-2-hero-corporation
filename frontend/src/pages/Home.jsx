@@ -28,11 +28,8 @@ function Home() {
         </Link>
       </div>
       <div className="banner-footer">
-        <div className="banner-teaser">FT. Aquaman, Odin and many others</div>
-        <div className="banner-creators-container">
-          <div className="banner-creators">
-            By Théo, Quentin, Jeffrey and Alexandra !
-          </div>
+        <div className="banner-teaser">
+          FT. Aquaman, Odin, Goku and many others ...
         </div>
       </div>
     </>

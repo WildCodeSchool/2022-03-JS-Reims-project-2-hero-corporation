@@ -1,18 +1,23 @@
-.banner,
-.banner-footer {
+.banner {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
+}
+
+.banner,
+.banner-footer {
   width: 100%;
   font-family: "Bangers";
-  letter-spacing: 0.05rem;
   text-align: center;
+  letter-spacing: 0.05rem;
   color: white;
+}
+.banner-presentation {
+  grid-row: 2;
+  grid-column: span 4 / -1;
 }
 .banner-presentation,
 .banner-teaser {
-  grid-row: 2;
-  grid-column: span 4 / -1;
   background-color: #3b6baa;
   border: 3px solid black;
   font-size: large;
@@ -36,6 +41,7 @@
   width: 90px;
   height: 90px;
   color: black;
+  text-align: center;
   padding: 0.5rem;
   line-height: 1.25;
 }
@@ -44,24 +50,8 @@
   font-size: 2rem;
 }
 
-.banner-creators-container {
-  z-index: 2;
-  grid-row-start: 1;
-  grid-column-start: 4;
-  grid-row-end: 4;
-  place-self: center stretch;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--red);
-  border: 3px solid black;
-  color: white;
-  padding: 0.5rem;
-  line-height: 1.25;
-}
-
 nav {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   max-height: 100px;
   display: flex;
   align-items: center;
@@ -94,6 +84,12 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
+.banner,
+.hero-corporation-logo,
+.play {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 
 @media screen and (orientation: landscape) {
   .banner-presentation,
@@ -103,6 +99,15 @@ nav {
     font-size: x-large;
   }
   .hero-corporation-logo {
-    background-image: "/src/assets/images/hero-corporation-logo-desktop.png";
+    max-width: 50vw;
+  }
+  .banner,
+  .play,
+  .hero-corporation-logo {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .play {
+    max-width: 25vw;
   }
 }
