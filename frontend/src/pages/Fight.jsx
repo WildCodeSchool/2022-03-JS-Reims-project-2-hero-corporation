@@ -78,7 +78,7 @@ function Fight({ hero, bossesList }) {
       if (weapon === bossWeakness) {
         damage = Math.floor(1.8 * damage);
       }
-      if (damage === 10) {
+      if (weapon === bossWeakness) {
         setCriticalHit(criticalHit + 1);
       }
 
