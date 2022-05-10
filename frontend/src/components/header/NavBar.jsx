@@ -17,9 +17,9 @@ function NavBar() {
             className="hclogo"
           />
         </Link>
-        <button type="button" className="rule" onClick={open}>
+        <button type="button" className="button-rules" onClick={open}>
           <img
-            src="/src/assets/images/regle.png"
+            src="/src/assets/images/regle-element.png"
             alt="Hero Corporation Logo "
           />
         </button>

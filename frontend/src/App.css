@@ -35,21 +35,6 @@ html {
   color: black;
   background-repeat: no-repeat;
 }
-nav {
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.rule {
-  width: 90px;
-  height: 90px;
-  margin: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .start {
   max-width: 250px;
   display: block;
@@ -57,12 +42,7 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
-.play {
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-}
+
 .vs-element {
   margin-left: 5rem;
   margin-right: 5rem;

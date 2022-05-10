@@ -59,8 +59,27 @@
   padding: 0.5rem;
   line-height: 1.25;
 }
+
+nav {
+  margin-top: 0.5rem;
+  max-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button-rules {
+  width: 70px;
+  height: 70px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hclogo {
-  max-width: 10vh;
+  width: 70px;
+  height: 70px;
   margin-left: 1rem;
 }
 
@@ -71,6 +90,12 @@
 
 .play {
   width: 30vw;
+}
+.play {
+  max-width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
 }
 
 @media screen and (orientation: landscape) {

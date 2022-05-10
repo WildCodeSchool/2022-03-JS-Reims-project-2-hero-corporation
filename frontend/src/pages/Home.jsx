@@ -21,7 +21,7 @@ function Home() {
         />
         <Link to="/selecthero">
           <img
-            src="/src/assets/images/HeroCorporation-end-elements-23.png"
+            src="/src/assets/images/play-element.png"
             alt="play img"
             className="play"
           />
