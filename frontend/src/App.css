@@ -87,26 +87,9 @@ nav {
   margin: 1rem;
   width: 300px;
 }
-.buttons button {
-  background-color: black;
-}
 .buttons:focus {
   outline: none;
 }
-/* gestion des hovers sur les boutons */
-.intelligence:hover {
-  color: var(--light-blue);
-}
-.strength:hover {
-  color: var(--green);
-}
-.speed:hover {
-  color: var(--red);
-}
-.power:hover {
-  color: var(--purple);
-}
-/* fin des hovers bouttons */
 /* Fin boutons d'attaque */
 
 .hclogo {
