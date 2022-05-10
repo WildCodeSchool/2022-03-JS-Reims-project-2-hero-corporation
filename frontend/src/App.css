@@ -44,11 +44,6 @@ nav {
 }
 
 .rule {
-  font-family: "Bangers";
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  background: red;
   margin: 0.5rem;
   display: flex;
   align-items: center;
