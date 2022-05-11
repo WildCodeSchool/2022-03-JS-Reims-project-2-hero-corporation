@@ -10,13 +10,14 @@
   padding-bottom: 1rem;
   position: relative;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .boss-container {
   --border: 3px solid black;
   border: var(--border);
   align-content: center;
-  width: 360px;
+  max-width: 360px;
   box-sizing: border-box;
   box-shadow: 0 3px 4px 3px rgba(0, 0, 0, 0.74);
   background-color: var(--green);
@@ -43,6 +44,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   position: relative;
+  margin-bottom: 0.5rem;
 }
 .fight-hero {
   --border: 3px solid black;
@@ -146,16 +148,15 @@
 
 @media screen and (orientation: landscape) {
   .hero-container {
-    width: 280px;
+    max-width: 280px;
   }
   .boss-container {
-    width: 550px;
+    max-width: 500px;
   }
   .fight-boss {
-    width: 300px;
-    margin-bottom: 10rem;
+    max-width: 300px;
   }
   .fight-hero {
-    width: 300px;
+    max-width: 300px;
   }
 }

@@ -24,11 +24,15 @@
   src: url(/src/assets/font/Antic-Regular.ttf);
 }
 html {
+  display: flex;
   line-height: 1;
-  overflow: hidden;
 }
 
 body {
+  flex-grow: 1;
+}
+
+:root {
   min-height: 100vh;
   background-image: url("./assets/images/background-hc-mobile.png");
   background-size: cover;
@@ -36,21 +40,25 @@ body {
   color: black;
   background-repeat: no-repeat;
 }
+
+#root {
+  height: 100%;
+}
+.App {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 nav {
-  margin-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .rule {
-  width: 90px;
-  height: 90px;
-  margin: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 90px;
 }
+
 .start {
   max-width: 250px;
   display: block;
@@ -58,16 +66,10 @@ nav {
   margin-right: auto;
   padding: 1rem;
 }
-.play {
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem;
-}
+
 .vs-element {
-  margin-left: 5rem;
-  margin-right: 5rem;
-  max-width: 75px;
+  margin-top: 0.5rem;
+  max-width: 100px;
 }
 
 .fightimg {
@@ -88,13 +90,12 @@ nav {
   font-size: 1.25rem;
   letter-spacing: 10rem;
   color: white;
-  margin: 1rem;
+  margin: 2rem;
   width: 300px;
 }
 .buttons:focus {
   outline: none;
 }
-/* Fin boutons d'attaque */
 
 /* Debut fight css */
 
@@ -111,12 +112,38 @@ nav {
   max-width: 5vh;
   margin: 0.75rem;
 }
+.explose-element {
+  position: absolute;
+  width: 4rem;
+  top: -2rem;
+  right: -1rem;
+}
+
+.text-explose {
+  position: absolute;
+  width: 4rem;
+  top: -0.5rem;
+  right: -1rem;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.text-hero-shadow {
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+/* Fin boutons d'attaque */
 
 main {
+  flex-grow: 1;
+  display: flex;
+}
+.pagefight {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
 }
 .heroSelect {
   display: flex;
@@ -138,39 +165,113 @@ main {
   text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
     -1px -1px 0 #000;
 }
-.progressgame {
+.timerprogress {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
+  width: max-content;
+  margin-bottom: 0.5rem;
 }
-#bosslife {
-  margin-bottom: 00.5rem;
+.timerprogress p {
+  font-weight: 600;
+  font-family: "Bangers";
+  font-size: 18pt;
 }
+
 .hero-corporation-logo {
   max-width: 100vw;
   height: auto;
 }
+#bosslife {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .heroAttack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
 }
 .bosslife {
+  font-family: "Bangers";
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
+.chactersfight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 5rem;
+}
+.progressgame {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.progressgame:after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0.35rem;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-family: "Bangers";
+}
+
 .endgame {
   max-height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+.progressbosslife {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+}
+.progressbosslife:after {
+  content: attr(data-label);
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Bangers";
+}
+progress {
+  height: 1.75rem;
+  border-radius: 20px;
+}
+::-moz-progress-bar,
+::-webkit-progress-value,
+::-webkit-progress-bar {
+  border-radius: 20px;
+}
+.progress-bar {
+  width: 60vw;
+}
+.bossfight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.timer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.selectheropage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 /* Début du responsive */
 @media screen and (orientation: landscape) {
-  body {
+  :root {
     background-image: url("./assets/images/background-hc-desktop.png");
     background-position: center;
     background-size: cover;
@@ -178,8 +279,15 @@ main {
   }
 
   main {
+    flex-direction: column;
+  }
+  .fight {
     flex-direction: row-reverse;
-    margin-top: 8rem;
+    margin-top: 4rem;
+  }
+  .vs-element {
+    align-self: flex-start;
+    margin-top: 5rem;
   }
 
   .fightimg {
@@ -189,17 +297,35 @@ main {
     margin-right: auto;
     margin: 1rem;
   }
-  .hero-corporation-logo {
-    height: 35vh;
+
+  .progressbosslife:after {
+    top: 0.55rem;
+    font-size: 18pt;
   }
-  .play {
-    width: 50vw;
+  .progressbosslife progress {
+    height: 2.5rem;
+    margin-left: 1.5rem;
   }
   .congratulation {
     max-width: 50vw;
   }
   .playagain {
     max-width: 50vw;
+  }
+  .bossfight {
+    flex-direction: row-reverse;
+  }
+  .boss-life {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin-left: 5rem;
+  }
+  .timerprogress p {
+    font-size: 5rem;
+  }
+  .progressgame {
+    margin-top: 3rem;
   }
 }
 /* Fin du responsive */
