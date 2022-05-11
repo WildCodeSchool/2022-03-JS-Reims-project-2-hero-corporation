@@ -188,7 +188,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 5rem;
 }
 .progressgame {
   position: relative;
@@ -311,6 +310,12 @@ progress {
   }
   .progressgame {
     margin-top: 3rem;
+  }
+  .chactersfight {
+    padding-right: 5rem;
+  }
+  .hero-corporation-logo {
+    width: 50vw;
   }
 }
 /* Fin du responsive */
