@@ -100,7 +100,7 @@ function Fight({ hero, bossesList }) {
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
       setOnomatopeia(randomOnomatopeia());
-    } else toast(`Not enouth ${[weapon]}`);
+    } else toast(`Not enought ${[weapon]}`);
   };
 
   useEffect(() => {
