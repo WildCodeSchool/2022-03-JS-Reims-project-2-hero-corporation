@@ -1,0 +1,51 @@
+.main-endgame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bande-header {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.bande-win {
+  grid-row: 1;
+  grid-column: span 5 / -1;
+  place-self: center;
+  background-color: #3b6baa;
+  color: white;
+  width: 100%;
+  border: var(--border);
+  font-family: "Bangers";
+  font-size: x-large;
+  letter-spacing: 0.05rem;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  place-self: center stretch;
+}
+.star-image1,
+.star-image2,
+.star-image3 {
+  z-index: 2;
+  max-width: 70px;
+  max-height: auto;
+  place-self: center;
+  grid-row-start: 2;
+}
+.star-image1 {
+  grid-column-start: 2;
+}
+
+.star-image2 {
+  grid-column-start: 3;
+}
+
+.star-image3 {
+  grid-column-start: 4;
+}
