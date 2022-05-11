@@ -40,7 +40,7 @@ function Fight({ hero, bossesList }) {
     initialTime: 300,
     timerType: "DECREMENTAL",
     endTime: 0,
-    autostart: false,
+    autostart: true,
     onTimeOver: () => open(),
   });
   const maxBossLife =
@@ -155,11 +155,13 @@ function Fight({ hero, bossesList }) {
               <Flash when={criticalHit % 3 === 0}>
                 <Character character={currentBoss} className="fight-boss">
                   <Zoom spy={bossLife} timeout={1000}>
-                    <img
-                      className="onomatopeia"
-                      src={`./src/assets/images/comic-cloud-${onomatopeia}.png`}
-                      alt={onomatopeia}
-                    />
+                    {onomatopeia && (
+                      <img
+                        className="onomatopeia"
+                        src={`./src/assets/images/comic-cloud-${onomatopeia}.png`}
+                        alt={onomatopeia}
+                      />
+                    )}
                   </Zoom>
                 </Character>
               </Flash>
