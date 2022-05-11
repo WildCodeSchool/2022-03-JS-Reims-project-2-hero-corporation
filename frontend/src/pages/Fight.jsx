@@ -91,7 +91,7 @@ function Fight({ hero, bossesList }) {
       setPreviousDamage({ ...previousDamage, [weapon]: damage });
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
-    } else toast(`Not enouth ${[weapon]}`);
+    } else toast(`Not enought ${[weapon]}`);
   };
 
   useEffect(() => {
