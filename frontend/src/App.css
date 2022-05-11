@@ -267,6 +267,7 @@ progress {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100vw;
 }
 /* Début du responsive */
 @media screen and (orientation: landscape) {
