@@ -4,21 +4,22 @@ function RulesModal() {
   return (
     <div className="flex justify-center items-center flex-col">
       <div className="boxrules box2rules flex justify-center items-center flex-col">
-        <h2>Règles</h2>
+        <h2>Rules</h2>
         <ul>
-          <li>Une fois sur l&apos;écran de sélection du héro</li>
-          <li>Fait défiller les héro avec les flêches</li>
-          <li>Une fois ton choix fait appuie sur start</li>
+          <li>When on the hero selection menu</li>
+          <li>Choose your hero with the arrow button</li>
+          <li>When your hero is selected press START</li>
+          <li>Fight starts</li>
           <li>
-            Le combat commence choisi parmis tes 4 attaques elles correspondes à
-            tes capacitées.
+            You can choose between 4 different attack types, each one deals
+            different damages
           </li>
-          <li>Certaine attaques infligent plus de dégat que d&apos;autres</li>
-          <li>Attention plus une stat diminue moins les dégats sont élevés</li>
+          <li>Some does more damages tham the others</li>
           <li>
-            Réfléchis bien à l&apos;utilisation de tes points d&apos;attaques
-            Pense au temps il n&apos;est pas illimité
+            Be careful: The less stats you have, the less damage you will do
           </li>
+          <li>Use your capacities carrefully</li>
+          <li>Be quick, you have only 5 minutes left !</li>
         </ul>
       </div>
     </div>
