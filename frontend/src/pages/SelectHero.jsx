@@ -16,7 +16,7 @@ function SelectHero({ characters, setSelectedHero }) {
   );
 
   return (
-    <>
+    <div className="selectheropage">
       <div className="bossSelect">
         {boss && (
           <Character
@@ -64,7 +64,7 @@ function SelectHero({ characters, setSelectedHero }) {
           &gt;
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
