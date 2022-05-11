@@ -97,6 +97,21 @@ nav {
   outline: none;
 }
 
+/* Debut fight css */
+
+.onomatopeia {
+  position: absolute;
+  width: 80%;
+  top: -3rem;
+  left: -7rem;
+}
+
+/* Fin fight css */
+
+.hclogo {
+  max-width: 5vh;
+  margin: 0.75rem;
+}
 .explose-element {
   position: absolute;
   width: 4rem;

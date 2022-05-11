@@ -6,10 +6,16 @@ import { ToastContainer, toast } from "react-toastify";
 import { useModal } from "react-hooks-use-modal";
 import Jump from "react-reveal/Jump";
 import Flash from "react-reveal/Flash";
+import Zoom from "react-reveal/Zoom";
 import Character from "../components/Character";
 import CharacterType from "../components/CharacterType";
 import HeroLossModal from "../components/HeroLossModal";
 import "react-toastify/dist/ReactToastify.css";
+
+function randomOnomatopeia() {
+  const words = ["bang", "boing", "pow"];
+  return words[Math.floor(Math.random() * words.length)];
+}
 
 function Fight({ hero, bossesList }) {
   const navigate = useNavigate();
@@ -25,6 +31,7 @@ function Fight({ hero, bossesList }) {
     power: 0,
   });
   const [criticalHit, setCriticalHit] = useState(0);
+  const [onomatopeia, setOnomatopeia] = useState();
   const [Modal, open] = useModal("root", {
     preventScroll: true,
     closeOnOverlayClick: false,
@@ -33,7 +40,7 @@ function Fight({ hero, bossesList }) {
     initialTime: 300,
     timerType: "DECREMENTAL",
     endTime: 0,
-    autostart: false,
+    autostart: true,
     onTimeOver: () => open(),
   });
   const maxBossLife =
@@ -51,6 +58,7 @@ function Fight({ hero, bossesList }) {
   const bossCount = bossesList.length;
 
   useEffect(() => {
+    setOnomatopeia();
     setBossLife(maxBossLife);
 
     const weaknessValue = Math.min(
@@ -91,6 +99,7 @@ function Fight({ hero, bossesList }) {
       setPreviousDamage({ ...previousDamage, [weapon]: damage });
       const newStat = Math.max(heroStats[weapon] - 1, 0);
       setHeroStats({ ...heroStats, [weapon]: newStat });
+      setOnomatopeia(randomOnomatopeia());
     } else toast(`Not enouth ${[weapon]}`);
   };
 
@@ -144,7 +153,17 @@ function Fight({ hero, bossesList }) {
           <div className="boss-life">
             <Jump spy={currentBoss} timeout={1000}>
               <Flash when={criticalHit % 3 === 0}>
-                <Character character={currentBoss} className="fight-boss" />
+                <Character character={currentBoss} className="fight-boss">
+                  <Zoom spy={bossLife} timeout={1000}>
+                    {onomatopeia && (
+                      <img
+                        className="onomatopeia"
+                        src={`./src/assets/images/comic-cloud-${onomatopeia}.png`}
+                        alt={onomatopeia}
+                      />
+                    )}
+                  </Zoom>
+                </Character>
               </Flash>
             </Jump>
             <div
