@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Wurmics-Bravo";
+  src: url(/src/assets/font/Wurmics-Bravo.ttf);
+}
+
 .main-endgame {
   display: flex;
   flex-direction: column;
@@ -62,6 +67,8 @@
   top: 33%;
   left: 45%;
   transform: translate(-40%, -40%);
+  font-family: "Wurmics-Bravo";
+  font-size: medium;
 }
 
 .congratulations-element {
